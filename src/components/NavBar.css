@@ -1,0 +1,47 @@
+/* Desktop Views */
+
+.NavBar {
+  display: flex;
+  background: transparent;
+  justify-content: space-around;
+  align-items: center;
+  height: var(--header-height);
+  background-color: var(--gray-dark-color);
+}
+
+.NavOptionsLeft {
+  padding-left: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 3rem;
+  list-style-type: none;
+}
+
+.NavOptionsRight {
+  padding-left: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 3rem;
+  list-style-type: none;
+}
+
+.LeftNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.RightNav {
+  display: flex;
+  padding: 0 0.3rem;
+  list-style-type: none;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.Option {
+  background-color: sienna;
+  color: wheat;
+  text-decoration: none;
+  border-radius: 1.3rem;
+}

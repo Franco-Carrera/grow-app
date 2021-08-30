@@ -1,4 +1,36 @@
+/* ******* Custom Properties ********* */
+:root {
+  --first-color: #d90062;
+  --first-alpha-color: rgba(111, 75, 128, 0.884);
+  --second-color: #14192d;
+  --second-alpha-color: rgba(20, 25, 45, 0.75);
+  --third-color: #501464;
+  --third-alpha-color: rgba(80, 20, 100, 0.75);
+  --white-color: #fff;
+  --gray-light-color: #f3f3f3;
+  --gray-color: #ccc;
+  --gray-dark-color: #666;
+  --black-color: #000;
+  --link-color: #509ee3;
+  --title-color: #333;
+  --text-color: #222;
+  --white-alpha-color: rgba(255, 255, 255, 0.5);
+  --black-alpha-color: rgba(0, 0, 0, 0.5);
+  /* --font: "Raleway", sans-serif; */
+  --max-width: 1200px;
+  --header-height: 4rem;
+}
+
+/* ********Utilities****** */
+
+/* **********App default******** */
 .App {
+  position: relative;
+  background-color: rgba(16, 53, 78, 0.5);
+  height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 0;
   text-align: center;
 }
 
