@@ -1,20 +1,22 @@
-import logo from "./logo.svg";
 import "./App.css";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/navbar/NavBar";
+import Welcome from "./components/Welcome/welcome.js";
+//import logo from '../assets/ llamarlo aquí'
 
 const Titulo = () => {
   return <h2>Inicio de App</h2>;
 };
 
 const App = () => {
+  //Lógica
   return (
     <div className="App">
       <header>
-        {/* class App-header */}
         <NavBar />
         <Titulo />
-        <img src={logo} className="App-logo" alt="logo" />
       </header>
+      <Welcome nombre="Hola" apellido="Persona"></Welcome>
+      {/* Item containerList  chekear*/}
     </div>
   );
 };

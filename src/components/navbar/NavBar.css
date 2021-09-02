@@ -6,7 +6,7 @@
   justify-content: space-around;
   align-items: center;
   height: var(--header-height);
-  background-color: var(--gray-dark-color);
+  background-color: var(--header-alpha-color);
 }
 
 .NavOptionsLeft {
@@ -40,7 +40,7 @@
 }
 
 .Option {
-  background-color: sienna;
+  background-color: var(--title-color);
   color: wheat;
   text-decoration: none;
   border-radius: 1.3rem;
