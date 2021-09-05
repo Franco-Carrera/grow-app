@@ -12,7 +12,13 @@
   --gray-dark-color: #666;
   --black-color: #000;
   --link-color: #509ee3;
+  --pale-green: #32cd32;
   --title-color: #333;
+  /* ---------------------- */
+  --black1: #1a1b1f;
+  --black2: #30353b;
+  --color_shadow: #00000033;
+  /* ---------------------- */
   --text-color: #222;
   --white-alpha-color: rgba(255, 255, 255, 0.5);
   --black-alpha-color: rgba(0, 0, 0, 0.5);
@@ -22,7 +28,19 @@
   --header-height: 4rem;
 }
 
+/***********Reset****** */
+
+img {
+  width: 100%;
+  height: auto;
+}
+
 /* ********Utilities****** */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--max-width);
+}
 
 /* **********App default******** */
 .App {
