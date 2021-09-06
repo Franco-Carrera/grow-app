@@ -10,7 +10,7 @@ const Main = () => {
             Nuestros servicios<span class="point">.</span>
           </h2>
           <p class="copy__section">
-            Ofrecemos las soluciones perfectas para revolución digital
+            Ofrecemos las soluciones perfectas para la revolución digital
           </p>
 
           <article class="container-cards">
@@ -32,7 +32,7 @@ const Main = () => {
             <div class="card">
               {/* <img src={imageEast} class="card__img"/>  */}
               <img src={imageEast} className="" alt="Logo" />
-              <div class="cards__text">
+              <div class="cards__text hidden">
                 <p class="card__list">Especialistas en diseño UX / UI</p>
                 <h3 class="card__title">
                   Diseño web<span class="point">.</span>

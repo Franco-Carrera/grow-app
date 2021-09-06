@@ -1,6 +1,6 @@
 import logo from "../../../src/assets/logo.svg";
-import logoCarrito from "../../../src/assets/shopping-cart.svg";
 import "./NavBar.css";
+import CartWidget from "../Cart/Cart";
 
 const NavBar = () => {
   return (
@@ -9,9 +9,10 @@ const NavBar = () => {
         <nav className="NavBar ">
           <div className="LeftNav">
             <div className="NavOptionsLeft">
-              {/* Logo aquí */}
               <img src={logo} className="App-logo" alt="Logo" />
-              <button className="Option">Home</button> {/*Reemplaz x <a> */}
+              {/*-------------------Button props---------*/}
+              <button className="Option">Home</button>
+              {/*Reemplaz x <a> */} {/*minuto 58*/}
               <button className="Option">About</button>
               <button className="Option">Favourites</button>
             </div>
@@ -22,7 +23,8 @@ const NavBar = () => {
               <button className="Option">SignUp</button>
             </div>
             <div>
-              <img className="logoCarri" src={logoCarrito} alt="" />
+              {/* CartWidget */}
+              <CartWidget />
             </div>
             <p className="contadorCarrito">0</p>
             {/* Item carrito */}
