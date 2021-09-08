@@ -1,8 +1,24 @@
+//import {useState, useEffect} from "react";
+import { useEffect } from "react";
 import logo from "../../../src/assets/logo.svg";
 import "./NavBar.css";
 import CartWidget from "../Cart/Cart";
 
-const NavBar = () => {
+const NavBar = (valor) => {
+  // const [product, setProduct] = useState("")
+
+  useEffect(() => {
+    console.log("Después del primer renderizado"); // SE VIENE FETCH.
+    //
+
+    ///
+
+    return () => {
+      console.log("Antes de desmontar el componente");
+    };
+  }, []);
+  console.log("El componente va a ser renderizado");
+
   return (
     <header className="header">
       <section className="container">
@@ -12,7 +28,7 @@ const NavBar = () => {
               <img src={logo} className="App-logo" alt="Logo" />
               {/*-------------------Button props---------*/}
               <button className="Option">Home</button>
-              {/*Reemplaz x <a> */} {/*minuto 58*/}
+              {/*Reemplaz x <a> */} {/*minuto 58 childrens*/}
               <button className="Option">About</button>
               <button className="Option">Favourites</button>
             </div>

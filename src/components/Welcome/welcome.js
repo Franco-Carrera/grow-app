@@ -11,4 +11,7 @@ const Welcome = ({ nombre, apellido }) => {
   );
 };
 
+// Puede ser un bienvenido usuario con
+// props en home
+
 export default Welcome;

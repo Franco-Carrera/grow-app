@@ -1,7 +1,7 @@
 import "./Button.css";
 
-const Button = ({ funcion, label }) => {
-  return <button onClick={funcion}>{label}</button>;
+const Button = ({ funciones, labels }) => {
+  return <button onClick={funciones}>{labels}</button>;
 };
 
 export default Button;
