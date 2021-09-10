@@ -8,8 +8,26 @@ const NavBar = (valor) => {
   // const [product, setProduct] = useState("")
 
   useEffect(() => {
-    console.log("Después del primer renderizado"); // SE VIENE FETCH.
-    //
+    console.log("Después del primer renderizado");
+    // SE VIENE Fetch
+
+    fetch("https://pokeapi.co/api/v2/pokemon/ditto")
+      .then(function (response) {
+        return response.json();
+        // species
+      })
+      .then(
+        function (user) {
+          console.log(user);
+          return user;
+        },
+        (err) => {
+          console.log(err);
+        }
+      )
+      .catch((reason) => console.log(reason));
+
+    ///
 
     ///
 

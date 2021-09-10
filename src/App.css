@@ -30,6 +30,10 @@
 
 /***********Reset****** */
 
+html {
+  background-color: rgba(16, 53, 78, 0.5);
+}
+
 .hidden {
   display: none;
 }
@@ -62,7 +66,6 @@ img {
 /* **********App default******** */
 .App {
   position: relative;
-  background-color: rgba(16, 53, 78, 0.5);
   height: 100vh;
   width: 100%;
   margin: 0 auto;

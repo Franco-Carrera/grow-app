@@ -1,22 +1,38 @@
 import { useState } from "react";
+import "./counter.css";
 
-const Counter = () => {
+const Counter = ({ stock }) => {
+  // const miStock = 10
+
+  const minium = 0;
+  const addOne = () => {
+    count < stock && setCount(count + 1);
+  };
+  const removeOne = () => {
+    count > minium && setCount(count - 1);
+  };
+
   const [count, setCount] = useState(0);
 
-  const miFuncionRestar = () => {
-    if (count > 0) setCount(count - 1);
-    if (count === 0) {
-      alert("ya es 0");
-    }
-  };
   // función suma en base a stocks
 
   return (
-    <div>
-      <h1>{count}</h1>
-      <button onClick={() => miFuncionRestar(count - 1)}>-</button>
-      <button onClick={() => setCount(count + 1)}>+</button>
-      <button>Agregar al carrito</button>
+    <div className="itemCount">
+      <div className="itemCount_buttons">
+        <h1>{count}</h1>
+        <button disabled={count === minium} onClick={removeOne}>
+          -
+        </button>
+        <button disabled={count === stock} onClick={addOne}>
+          +
+        </button>
+      </div>
+      {count <= minium ? (
+        <p>Cuantas unidades quieres</p>
+      ) : (
+        <button className="addToCart-btn">Agregar al carrito</button>
+      )}
+      <p className="stock">Stock: {stock}</p>
     </div>
   );
 };
