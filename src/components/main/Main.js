@@ -50,7 +50,7 @@ const Main = () => {
               <div className="cards__text">
                 <p className="card__list">Especialistas en diseño UX / UI</p>
                 <h3 className="card__title">
-                  Ecommerce<span class="point">.</span>
+                  Ecommerce<span></span>
                 </h3>
                 <p className="card__copy">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel

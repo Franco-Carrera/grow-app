@@ -13,6 +13,7 @@ function getList() {
 const ItemListContainer = () => {
   const [itemList, setItemList] = useState([]);
 
+  /*Logic */
   useEffect(() => {
     const list = getList();
 
@@ -26,6 +27,7 @@ const ItemListContainer = () => {
       .catch((reason) => console.log(reason));
   }, []);
 
+  /**Render */
   return (
     <main>
       <h1>Productos</h1>
