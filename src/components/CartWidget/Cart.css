@@ -1,0 +1,9 @@
+.navbar__cartIcon {
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+.navbar__cartIcon:hover {
+  color: rgb(113, 172, 113);
+  transition: all 300ms;
+}

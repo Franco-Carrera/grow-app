@@ -19,11 +19,22 @@ const FetchSearch = () => {
       });
   };
 
+  ////////////
+  const vocales = ["a", "e", "i", "o", "u"];
+  const handlerKeyDown = (ev) => {
+    ev.preventDefault();
+    if (vocales.find((item) => ev.key.toLowerCase() === item)) {
+    }
+  };
+  //corregir
+
   /**Aquí iría lo que se renderiza **/
   return (
     <section>
       <form onSubmit={handleForm}>
         <input type="text" onChange={(event) => setInput(event.target.value)} />
+        {/* ------------------------------ */}
+        <input onKeyDown={handlerKeyDown} />
         <button type="submit">Buscar</button>
       </form>
 

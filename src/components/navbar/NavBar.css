@@ -45,6 +45,11 @@
   color: wheat;
   text-decoration: none;
   border-radius: 1.3rem;
+  padding: 0.65rem;
+}
+
+.NavLink {
+  color: orange;
 }
 
 /* Header */
@@ -72,6 +77,7 @@
 
 .contadorCarrito {
   padding: 0.5rem;
+  margin-left: -7rem;
 }
 
 /* .logo a {

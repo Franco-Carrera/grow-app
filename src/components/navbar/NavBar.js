@@ -1,67 +1,63 @@
-//import {useState, useEffect} from "react";
-import { useEffect } from "react";
-import logo from "../../../src/assets/logo.svg";
+///
 import "./NavBar.css";
-import CartWidget from "../Cart/Cart";
+import { NavLink } from "react-router-dom";
+import NavBarItem from "../NavBarItem/NavBarItem";
+import logo from "../../../src/assets/logo.svg";
+import CartWidget from "../CartWidget/CartWidget";
 
-const NavBar = (valor) => {
-  // const [product, setProduct] = useState("")
-
-  useEffect(() => {
-    console.log("Después del primer renderizado");
-    // SE VIENE Fetch
-
-    fetch("https://pokeapi.co/api/v2/pokemon/ditto")
-      .then(function (response) {
-        return response.json();
-        // species
-      })
-      .then(
-        function (user) {
-          console.log(user);
-          return user;
-        },
-        (err) => {
-          console.log(err);
-        }
-      )
-      .catch((reason) => console.log(reason));
-
-    ///
-
-    ///
-
-    return () => {
-      console.log("Antes de desmontar el componente");
-    };
-  }, []);
-  console.log("El componente va a ser renderizado");
+const NavBar = ({ itemList }) => {
+  const categories = [...new Set(itemList.map((item) => item.category))];
 
   return (
     <header className="header">
       <section className="container">
         <nav className="NavBar ">
+          {/* ----------Nav------------*/}
           <div className="LeftNav">
             <div className="NavOptionsLeft">
               <img src={logo} className="App-logo" alt="Logo" />
-              {/*-------------------Button props---------*/}
-              <button className="Option">Home</button>
-              {/*Reemplaz x <a> */} {/*minuto 58 childrens*/}
-              <button className="Option">About</button>
-              <button className="Option">Favourites</button>
+
+              {/*--------------NavLinks---------*/}
+              <NavLink
+                activeClassName="NavLink"
+                className="Option"
+                exact
+                to="/"
+              >
+                <NavBarItem label="productos" />
+              </NavLink>
+
+              {categories.map((cat) => (
+                <NavLink
+                  key={cat}
+                  activeClassName="NavLink"
+                  className="Option"
+                  to={`/category/${cat}`}
+                >
+                  <NavBarItem label={cat} />
+                </NavLink>
+              ))}
+
+              <NavLink
+                activeClassName="NavLink"
+                className="Option"
+                to="/contact"
+              >
+                <NavBarItem label="contacto" />
+              </NavLink>
             </div>
           </div>
+
           <div className="RightNav">
             <div className="NavOptionsRight">
-              <button className="Option">SignIn</button>
-              <button className="Option">SignUp</button>
-            </div>
-            <div>
-              {/* CartWidget */}
-              <CartWidget />
+              <div>
+                <NavLink activeClassName="NavLink" to="/cart">
+                  <CartWidget />
+                </NavLink>
+              </div>
+              {/*---------*/}
             </div>
             <p className="contadorCarrito">0</p>
-            {/* Item carrito */}
           </div>
         </nav>
       </section>
@@ -69,6 +65,3 @@ const NavBar = (valor) => {
   );
 };
 export default NavBar;
-
-///
-////

@@ -1,57 +1,67 @@
-import { useState } from "react";
-//
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-//
+import { useState, useEffect } from "react";
 import "./App.css";
-import ItemListContainer from "./components/ItemListContain/ItemList";
-import FetchSearch from "./components/FetchSearch/FetchSearch";
-import NavBar from "./components/navbar/NavBar";
-import Main from "./components/main/Main";
-import Welcome from "./components/Welcome/welcome.js";
+//
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+//
+import { getList } from "./getList";
+import SignUp from "./views/SignUp/SignUp";
+import Cart from "./views/Cart/Cart";
 
-const Titulo = () => {
-  return <h2 className="text-left">Inicio de App</h2>;
-  /**Futuro useEffect + setTimeout */
-};
+import NavBar from "./components/navbar/NavBar";
+import ItemListContainer from "./views/ItemListContainer/ItemListContainer";
+import ItemDetailContainer from "./views/ItemListContainer/ItemListContainer";
 
 const App = () => {
-  const [view, setView] = useState(true);
-  ///
-  ///
-  //
-  //Renderizado
+  const [itemList, setItemList] = useState([]);
+  // Lógica que veremos si dejar aquí u in loading
+
+  /////
+  useEffect(() => {
+    const list = getList();
+
+    list
+      .then(
+        (list) => {
+          setItemList(list);
+        },
+        (err) => console.log(err)
+      )
+      .catch((reason) => console.log(reason));
+  }, []);
+
   return (
-    <div className="App">
-      <BrowserRouter>
-        {/*-------------- */}
-
-        {/*------- header--------- */}
-        {view ? <NavBar /> : <h1>Navbar desmontado</h1>}
-
-        <button onClick={() => setView(!view)}>Mostrar Navbar o no</button>
-
-        <Titulo />
-        <FetchSearch />
-        {/* -----------------------*/}
-
-        {/*------- Home y ItemListContainer*/}
-        <ItemListContainer name="Fran"></ItemListContainer>
-        {/* Comienzo de switch */}
-        <Switch>
-          <Route exact path="/main">
-            {/*------- Main------------ */}
-            <Main>
-              {/* --------Welcome------ */}
-              <Welcome nombre="Hola" apellido="Persona"></Welcome>
-              {/*------------------------ */}
-            </Main>
-            {/*--------------------- */}
-          </Route>
-        </Switch>
-        {/*------------------------*/}
-      </BrowserRouter>
-    </div>
+    <Router>
+      <NavBar itemList={itemList} />
+      <Switch>
+        <Route exact path="/">
+          <ItemListContainer />
+        </Route>
+        <Route path="/category/:category">
+          <ItemListContainer />
+        </Route>
+        <Route path="/contact">
+          <SignUp />
+        </Route>
+        <Route path="/cart">
+          <Cart />
+        </Route>
+        <Route path="/item/:id">
+          <ItemDetailContainer />
+        </Route>
+      </Switch>
+    </Router>
   );
 };
 
 export default App;
+
+// Crear componentes SECCIONES
+/// Browser ruter se comunica con botones de navbar y desde allí
+//lleva a componentes con esos mismos nombres
+// por medio del path     // dentro de app
+
+// <Route path="/">
+//<Home/>
+//</Route>
+//</Switch>
+//</BrowserRouter>

@@ -28,7 +28,7 @@ const Counter = ({ stock }) => {
         </button>
       </div>
       {count <= minium ? (
-        <p>Cuantas unidades quieres</p>
+        <p>Cuantas unidades desea llevar?</p>
       ) : (
         <button className="addToCart-btn">Agregar al carrito</button>
       )}

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { data } from "../../data";
 // import ItemCount from "../ItemCount/ItemCount"
-import ItemList from "../ItemList/ItemList";
+import ItemList from "../../components/ItemList/ItemList";
 import "./ItemListcontain.css";
 
 function getList() {
@@ -42,5 +42,3 @@ export default ItemListContainer;
 // Podemos usar un componente de presentación para
 // distintas funciones en botones de navbar
 // + Children
-
-//// ir crtl z iniciar again
