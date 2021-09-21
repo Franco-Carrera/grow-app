@@ -17,7 +17,7 @@ const ItemListContainer = () => {
       list
         .then(
           (result) => {
-            const filterProducts = result.find(
+            const filterProducts = result.filter(
               (item) => item.category === category
             );
             setProducts(filterProducts);

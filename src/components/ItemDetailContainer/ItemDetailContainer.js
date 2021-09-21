@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react/cjs/react.development";
 import { useParams } from "react-router-dom";
-import ItemDetail from "../../components/ItemDetail/ItemDetail";
+import ItemDetail from "../ItemDetail/ItemDetail";
 import { getList } from "../../getList";
 import "./ItemDetailContainer.css";
 

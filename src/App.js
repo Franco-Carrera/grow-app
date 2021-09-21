@@ -8,8 +8,8 @@ import SignUp from "./views/SignUp/SignUp";
 import Cart from "./views/Cart/Cart";
 
 import NavBar from "./components/navbar/NavBar";
-import ItemListContainer from "./views/ItemListContainer/ItemListContainer";
-import ItemDetailContainer from "./views/ItemListContainer/ItemListContainer";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 
 const App = () => {
   const [itemList, setItemList] = useState([]);
@@ -54,14 +54,3 @@ const App = () => {
 };
 
 export default App;
-
-// Crear componentes SECCIONES
-/// Browser ruter se comunica con botones de navbar y desde allí
-//lleva a componentes con esos mismos nombres
-// por medio del path     // dentro de app
-
-// <Route path="/">
-//<Home/>
-//</Route>
-//</Switch>
-//</BrowserRouter>
