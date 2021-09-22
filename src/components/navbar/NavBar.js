@@ -18,31 +18,17 @@ const NavBar = ({ itemList }) => {
               <img src={logo} className="App-logo" alt="Logo" />
 
               {/*--------------NavLinks---------*/}
-              <NavLink
-                activeClassName="NavLink"
-                className="Option"
-                exact
-                to="/"
-              >
+              <NavLink className="Option" exact to="/">
                 <NavBarItem label="productos" />
               </NavLink>
 
               {categories.map((cat) => (
-                <NavLink
-                  key={cat}
-                  activeClassName="NavLink"
-                  className="Option"
-                  to={`/category/${cat}`}
-                >
-                  <NavBarItem label={cat} />
+                <NavLink key={cat} className="Option" to={`/category/${cat}`}>
+                  <NavBarItem label="favourites" />
                 </NavLink>
               ))}
 
-              <NavLink
-                activeClassName="NavLink"
-                className="Option"
-                to="/contact"
-              >
+              <NavLink className="Option" to="/contact">
                 <NavBarItem label="contacto" />
               </NavLink>
             </div>
@@ -51,7 +37,7 @@ const NavBar = ({ itemList }) => {
           <div className="RightNav">
             <div className="NavOptionsRight">
               <div>
-                <NavLink activeClassName="NavLink" to="/cart">
+                <NavLink to="/cart">
                   <CartWidget />
                 </NavLink>
               </div>

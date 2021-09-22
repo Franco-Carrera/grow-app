@@ -3,7 +3,7 @@ import "./NavBarItem.css";
 const NavBarItem = ({ label }) => {
   return (
     <li>
-      <button>{label}</button>
+      <button className="navbar__item">{label}</button>
     </li>
   );
 };

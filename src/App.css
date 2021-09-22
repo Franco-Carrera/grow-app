@@ -34,6 +34,10 @@ html {
   background-color: rgba(16, 53, 78, 0.5);
 }
 
+h1 {
+  text-align: center;
+}
+
 .hidden {
   display: none;
 }

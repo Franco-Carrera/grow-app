@@ -12,13 +12,14 @@ const ItemDetail = ({ item }) => {
   }
 
   return (
-    <div className="itemDetail">
+    <section>
+      {/* crear card styles */}
       <header>
         <h2 className="title">{capitalLetter(item.title)}</h2>
       </header>
 
-      <main>
-        <img src={item.pictureUrl} alt="PictureDetail" />
+      <main className="mainDetail">
+        <img className="card__img" src={item.pictureUrl} alt="PictureDetail" />
         <div className="details">
           <p className="description">{capitalLetter(item.longDescription)}</p>
           <p className="price">${item.price}</p>
@@ -28,7 +29,7 @@ const ItemDetail = ({ item }) => {
       <footer>
         <Counter className="counter" stock={item.stock} />
       </footer>
-    </div>
+    </section>
   );
 };
 
