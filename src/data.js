@@ -5,35 +5,35 @@ import photo3 from "./assets/images/fertilizante_veg.jpg";
 export const data = [
   {
     id: 0,
-    title: "Tabla 1",
+    title: "Conos Blunts",
     description: "Conos Blunt Rey",
     longDescription:
       "Blunt Rey Orgánicos son conos perfectos para aquellas personas que no se dan maña armando con las manos, ya que los conos ya vienen enrolados y solo queda rellenarlos.  Se caracteriza por una combustión lenta y 100% no blanqueados. Cada cajita individual trae 32 conos, todos los vienen con filtro tip incluido y son King size (110mm aprox.). Podes comprarlos a partir de 20 unidades.",
     price: 500,
     pictureUrl: photo,
-    categoryes: "primera",
+    categoryes: "Conos blunts",
     stock: 1,
   },
   {
     id: 1,
-    title: "Tabla 2",
+    title: "Celulosa Coffe",
     description: "Celulosa Coffe",
     longDescription:
       "Papel Celulosa hecho con extractos de café, ideal para probar un sabor diferente.",
     price: 1600,
     pictureUrl: photo2,
-    categoryes: "segunda",
+    categoryes: "Celulosas",
     stock: 3,
   },
   {
     id: 2,
-    title: "Tabla 1",
+    title: "Conos Blunts",
     description: "Conos Blunt Rey",
     longDescription:
       "Blunt Rey Orgánicos son conos perfectos para aquellas personas que no se dan maña armando con las manos, ya que los conos ya vienen enrolados y solo queda rellenarlos.  Se caracteriza por una combustión lenta y 100% no blanqueados. Cada cajita individual trae 32 conos, todos los vienen con filtro tip incluido y son King size (110mm aprox.). Podes comprarlos a partir de 20 unidades.",
     price: 500,
     pictureUrl: photo,
-    categoryes: "tercera",
+    categoryes: "Conos blunts",
     stock: 1,
   },
   {
@@ -48,7 +48,7 @@ export const data = [
   },
   {
     id: 4,
-    title: "Tabla 3",
+    title: "Filtros Ocb",
     description: "Filtros",
     longDescription:
       " El filtro Slim Palmer x 600 unidades debe ser utilizado con papeles y tabaco de liar, esta hecho con papel natural y acetato de celulosa.",
@@ -59,7 +59,7 @@ export const data = [
 
   {
     id: 5,
-    title: "Tabla 4",
+    title: "Filtros Slim",
     description: "Filtros Slim Palmer",
     longDescription:
       " El filtro Slim Palmer x 600 unidades debe ser utilizado con papeles y tabaco de liar, esta hecho con papel natural y acetato de celulosa.",
