@@ -4,7 +4,7 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 import { getList } from "../../getList";
 import "./ItemDetailContainer.css";
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = (productsAdded, addProdFunction) => {
   const { id } = useParams();
   const [item, setItem] = useState(undefined);
 
@@ -25,7 +25,12 @@ const ItemDetailContainer = () => {
 
   return (
     <div className="itemDetailContainer">
-      <ItemDetail key={item?.id} item={item} />
+      <ItemDetail
+        key={item?.id}
+        item={item}
+        productsAdded={productsAdded}
+        addProdFunction={addProdFunction}
+      />
     </div>
   );
 };

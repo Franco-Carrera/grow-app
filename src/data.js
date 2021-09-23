@@ -11,6 +11,7 @@ export const data = [
       "Blunt Rey Orgánicos son conos perfectos para aquellas personas que no se dan maña armando con las manos, ya que los conos ya vienen enrolados y solo queda rellenarlos.  Se caracteriza por una combustión lenta y 100% no blanqueados. Cada cajita individual trae 32 conos, todos los vienen con filtro tip incluido y son King size (110mm aprox.). Podes comprarlos a partir de 20 unidades.",
     price: 500,
     pictureUrl: photo,
+    categoryes: "primera",
     stock: 1,
   },
   {
@@ -21,6 +22,7 @@ export const data = [
       "Papel Celulosa hecho con extractos de café, ideal para probar un sabor diferente.",
     price: 1600,
     pictureUrl: photo2,
+    categoryes: "segunda",
     stock: 3,
   },
   {
@@ -31,6 +33,7 @@ export const data = [
       "Blunt Rey Orgánicos son conos perfectos para aquellas personas que no se dan maña armando con las manos, ya que los conos ya vienen enrolados y solo queda rellenarlos.  Se caracteriza por una combustión lenta y 100% no blanqueados. Cada cajita individual trae 32 conos, todos los vienen con filtro tip incluido y son King size (110mm aprox.). Podes comprarlos a partir de 20 unidades.",
     price: 500,
     pictureUrl: photo,
+    categoryes: "tercera",
     stock: 1,
   },
   {
