@@ -6,7 +6,11 @@ import logo from "../../../src/assets/logo.svg";
 import CartWidget from "../CartWidget/CartWidget";
 
 const NavBar = ({ itemList }) => {
-  const categories = [...new Set(itemList.map((item) => item.category))];
+  //const categories = [...new Set(itemList.map((item) => item.category))];
+
+  const arrayObjets = [
+    { id: "Fertilizantes", description: "productos fertilizantes" },
+  ];
 
   return (
     <header className="header">
@@ -22,8 +26,12 @@ const NavBar = ({ itemList }) => {
                 <NavBarItem label="productos" />
               </NavLink>
 
-              {categories.map((cat) => (
-                <NavLink key={cat} className="Option" to={`/category/${cat}`}>
+              {arrayObjets.map((cat) => (
+                <NavLink
+                  key={cat.id}
+                  className="Option"
+                  to={`/category/${cat.description}`}
+                >
                   <NavBarItem label="favourites" />
                 </NavLink>
               ))}
