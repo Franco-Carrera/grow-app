@@ -34,7 +34,7 @@
 
 .RightNav {
   display: flex;
-  padding: 0 0.3rem;
+  padding: 0 0.2rem;
   list-style-type: none;
   align-items: center;
   justify-content: center;
@@ -45,11 +45,30 @@
   color: wheat;
   text-decoration: none;
   border-radius: 1.3rem;
-  padding: 0.65rem;
+  padding: 0.55rem;
+}
+.Option::after {
+  transform: translateY(-5px);
+  transform: translateX(+5px);
+
+  content: "";
+  display: block;
+  width: 0%;
+  border-bottom: solid 2px white;
+  opacity: 0;
+}
+.Option:hover::after {
+  opacity: 1;
+  width: 85%;
+  transition: all 500ms;
 }
 
-.NavLink {
+.navLinkActive {
   color: orange;
+}
+.navLinkActive::after {
+  opacity: 1;
+  width: 90%;
 }
 
 /* Header */
@@ -60,7 +79,6 @@
 }
 
 /* ------ */
-
 .App-logo {
   height: 6vmin;
   pointer-events: none;
@@ -73,6 +91,10 @@
 
 .RightNav > svg {
   fill: var(--pale-green);
+}
+
+.Cart__Container {
+  padding: 0.2rem;
 }
 
 .contadorCarrito {

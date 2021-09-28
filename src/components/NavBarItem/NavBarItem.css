@@ -2,9 +2,6 @@
   border: none;
   background-color: transparent;
   color: white;
-  font-size: 1rem;
-}
-
-.activeItems {
-  color: orange;
+  font-size: 1.055rem;
+  font-family: "Nunito", sans-serif;
 }

@@ -2,6 +2,29 @@ import photo from "./assets/images/conos_Blunt.webp";
 import photo2 from "./assets/images/celulosa_coffe.jpg";
 import photo3 from "./assets/images/fertilizante_veg.jpg";
 
+// Aquí irían categorys
+
+//const categoryes = [
+// { id: "Fertilizantes", description: "Productos fertilizantes" },
+// Other categoryes
+//];
+
+// y asi exportarlo
+
+export const getCategories = () => [
+  { id: "celulosas", description: "Celulosa" },
+  { id: "filtros", description: "Filtros Slim Palmer" },
+  { id: "fertilizantes", description: "Fertilizantes líquidos" },
+];
+
+/*export const getProductById = (id) => {    
+    return new Promise((resolve, reject) => {
+        const product = products.find(prod => Number(prod.id) === Number(id))
+        setTimeout(() => resolve(product), 1000)
+    })
+}
+*/
+
 export const data = [
   {
     id: 0,

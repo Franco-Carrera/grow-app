@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import "./counter.css";
 
-const Counter = ({ stock, onConfirm }) => {
+const Counter = ({ item, stock, productsAdded, addProdFunction }) => {
+  const [count, setCount] = useState(0);
+  const [clickThis, setClick] = useState(0);
+
   const minium = 0;
   const addOne = () => {
     count < stock && setCount(count + 1);
@@ -12,8 +15,14 @@ const Counter = ({ stock, onConfirm }) => {
     count > minium && setCount(count - 1);
   };
 
-  const [count, setCount] = useState(0);
-  const [clickThis, setClick] = useState(0);
+  const onAddToCart = () => {
+    const newProduct = {
+      ...item,
+      count: count,
+    };
+    setCount(count);
+    addProdFunction([...productsAdded, newProduct]);
+  };
 
   return (
     <div className="itemCount">
@@ -31,23 +40,24 @@ const Counter = ({ stock, onConfirm }) => {
       ) : (
         <Fragment>
           <div className="itemCount__buttons">
-            <button disabled={count === minium} onClick={removeOne}>
-              -
-            </button>
             <p>{count}</p>
             <button disabled={count === stock} onClick={addOne}>
               +
+            </button>
+            <button disabled={count === minium} onClick={removeOne}>
+              -
             </button>
           </div>
           {count <= minium ? (
             <p>Cuantas unidades desea llevar?</p>
           ) : (
             <button
+              className="addToCart_btn"
               onClick={() => {
-                onConfirm(count);
+                //onConfirm(count);
+                onAddToCart();
                 setClick(true);
               }}
-              className="addToCart_btn"
             >
               Agregar al carrito
             </button>
