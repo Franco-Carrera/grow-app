@@ -5,3 +5,37 @@
 /* .itemCount__buttons {
   padding: 0.1rem;
 } */
+
+/* button {
+  border: none;
+  color: #fff;
+  border-radius: 50px;
+  font-size: 1.25rem;
+  font-weight: bolder;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(117, 128, 143);
+} */
+
+.stock {
+  font-size: 1.2rem;
+  color: rgb(163, 163, 163);
+}
+
+.addToCart-btn {
+  border: none;
+  border-radius: 5px;
+  background-image: linear-gradient(
+    to top,
+    rgb(79, 97, 136),
+    rgb(108, 127, 167)
+  );
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  font-weight: bold;
+  box-shadow: 2px 3px 8px 0px rgba(0, 0, 0, 0.8);
+}
+.addToCart-btn:hover {
+  transform: scale(1.03);
+  transition: all 250ms;
+}

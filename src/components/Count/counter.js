@@ -1,27 +1,19 @@
-import { Fragment } from "react";
+import { useState, Fragment, useContext } from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import "./counter.css";
+import "./Counter.css";
+import CartContext from "../../context/CartContext";
 
-const Counter = ({ item, stock, productsAdded, addProdFunction }) => {
+const Counter = ({ item }) => {
+  const { addItem } = useContext(CartContext);
   const [count, setCount] = useState(0);
-  const [clickThis, setClick] = useState(0);
+  const [clickThis, setClick] = useState(false);
 
   const minium = 0;
   const addOne = () => {
-    count < stock && setCount(count + 1);
+    count < item.stock && setCount(count + 1);
   };
   const removeOne = () => {
     count > minium && setCount(count - 1);
-  };
-
-  const onAddToCart = () => {
-    const newProduct = {
-      ...item,
-      count: count,
-    };
-    setCount(count);
-    addProdFunction([...productsAdded, newProduct]);
   };
 
   return (
@@ -29,9 +21,9 @@ const Counter = ({ item, stock, productsAdded, addProdFunction }) => {
       {clickThis ? (
         <Fragment>
           <div className="itemCount__buttons">
-            <button disabled>-</button>
             <p>{count}</p>
             <button disabled>+</button>
+            <button disabled>-</button>
           </div>
           <Link to="/cart">
             <button className="addToCart_btn">Terminar compra</button>
@@ -41,7 +33,7 @@ const Counter = ({ item, stock, productsAdded, addProdFunction }) => {
         <Fragment>
           <div className="itemCount__buttons">
             <p>{count}</p>
-            <button disabled={count === stock} onClick={addOne}>
+            <button disabled={count === item.stock} onClick={addOne}>
               +
             </button>
             <button disabled={count === minium} onClick={removeOne}>
@@ -52,19 +44,19 @@ const Counter = ({ item, stock, productsAdded, addProdFunction }) => {
             <p>Cuantas unidades desea llevar?</p>
           ) : (
             <button
-              className="addToCart_btn"
               onClick={() => {
+                addItem(item, count);
                 //onConfirm(count);
-                onAddToCart();
                 setClick(true);
               }}
+              className="addToCart_btn"
             >
               Agregar al carrito
             </button>
           )}
         </Fragment>
       )}
-      <p className="stock">Stock: {stock}</p>
+      <p className="stock">Stock: {item.stock}</p>
     </div>
   );
 };

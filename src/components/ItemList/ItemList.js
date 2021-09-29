@@ -20,6 +20,6 @@ const ItemList = ({ products }) => {
   );
 };
 
-// ver si se deja aquí la key
+// item = cada producto
 
 export default ItemList;

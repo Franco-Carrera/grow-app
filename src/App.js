@@ -3,9 +3,6 @@ import "./App.css";
 //
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { getList } from "./getList";
-import { getCategories } from "./data";
-//
-import Login from "./components/Login/Login";
 //
 import SignUp from "./views/SignUp/SignUp";
 import Cart from "./views/Cart/Cart";
@@ -14,23 +11,11 @@ import NavBar from "./components/navbar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 //
-import Notification from "./components/Notification/Notification";
-import { NotificationContextProvider } from "./context/NotificationContext";
-//import { UserContext } from './context/UserContext'
+import { CartContextProvider } from "./context/CartContext";
 
 const App = () => {
-  const [cartProducts, setCardProduct] = useState([]);
-  const [user, setUser] = useState([]);
   const [itemList, setItemList] = useState([]);
 
-  // Lógica que veremos si dejar aquí u in loading
-  useEffect(() => {
-    setTimeout(() => {
-      setUser("Usuario");
-    }, 5000);
-  }, []);
-
-  /////
   useEffect(() => {
     const list = getList();
 
@@ -45,14 +30,9 @@ const App = () => {
   }, []);
 
   return (
-    <NotificationContextProvider value={user}>
+    <CartContextProvider>
       <Router>
-        <NavBar
-          categories={getCategories()}
-          itemList={itemList}
-          cartProducts={cartProducts}
-        />
-        <Notification />
+        <NavBar itemList={itemList} />
         <Switch>
           <Route exact path="/">
             <ItemListContainer />
@@ -64,23 +44,14 @@ const App = () => {
             <SignUp />
           </Route>
           <Route path="/cart">
-            <Cart
-              productsAdded={cartProducts}
-              addProdFunction={setCardProduct}
-            />
+            <Cart />
           </Route>
           <Route path="/item/:id">
-            <ItemDetailContainer
-              productsAdded={cartProducts}
-              addProdFunction={setCardProduct}
-            />
-            <Route path="/login">
-              <Login />
-            </Route>
+            <ItemDetailContainer />
           </Route>
         </Switch>
       </Router>
-    </NotificationContextProvider>
+    </CartContextProvider>
   );
 };
 
