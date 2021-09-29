@@ -1,36 +1,37 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import "./counter.css";
+import NotificationContext from "../../context/NotificationContext";
 
 const Counter = ({ item, stock, productsAdded, addProdFunction }) => {
-  const [count, setCount] = useState(0);
+  const [quantity, setQuantity] = useState(0);
   const [clickThis, setClick] = useState(0);
+  const { setNotification } = useContext(NotificationContext);
 
   const minium = 0;
   const addOne = () => {
-    count < stock && setCount(count + 1);
+    quantity < stock && setQuantity(quantity + 1);
   };
   const removeOne = () => {
-    count > minium && setCount(count - 1);
+    quantity > minium && setQuantity(quantity - 1);
   };
 
   const onAddToCart = () => {
-    const newProduct = {
-      ...item,
-      count: count,
-    };
-    setCount(count);
-    addProdFunction([...productsAdded, newProduct]);
+    setQuantity(quantity);
+    setNotification("success", `${item.title} ha sido agregado al carrito`);
   };
+  //setQuantity(0);
+  // addProdFunction([...productsAdded, newProduct]);
+  // setNotification("success", `${item.name} ha sido agregado al carrito`);
 
   return (
-    <div className="itemCount">
+    <div className="itemquantity">
       {clickThis ? (
         <Fragment>
           <div className="itemCount__buttons">
             <button disabled>-</button>
-            <p>{count}</p>
+            <p>{quantity}</p>
             <button disabled>+</button>
           </div>
           <Link to="/cart">
@@ -40,21 +41,21 @@ const Counter = ({ item, stock, productsAdded, addProdFunction }) => {
       ) : (
         <Fragment>
           <div className="itemCount__buttons">
-            <p>{count}</p>
-            <button disabled={count === stock} onClick={addOne}>
+            <p>{quantity}</p>
+            <button disabled={quantity === stock} onClick={addOne}>
               +
             </button>
-            <button disabled={count === minium} onClick={removeOne}>
+            <button disabled={quantity === minium} onClick={removeOne}>
               -
             </button>
           </div>
-          {count <= minium ? (
+          {quantity <= minium ? (
             <p>Cuantas unidades desea llevar?</p>
           ) : (
             <button
               className="addToCart_btn"
               onClick={() => {
-                //onConfirm(count);
+                //onConfirm(quantity);
                 onAddToCart();
                 setClick(true);
               }}

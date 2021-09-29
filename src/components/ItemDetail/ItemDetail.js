@@ -1,33 +1,35 @@
 //import { useState } from "react";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import Counter from "../Count/counter";
 import { Link } from "react-router-dom";
 import Loading from "../Loading/Loading";
 import "./ItemDetail.css";
-import UserContext from "../../context/UserContext";
+//import UserContext from "../../context/UserContext";
 
 //Capittal Letter
 const capitalLetter = (str) =>
   str.charAt(0).toUpperCase() + str.toLowerCase().slice(1);
 
 const ItemDetail = ({ item, productsAdded, addProdFunction }) => {
-  const [quantity, setQuantity] = useState(0);
-  const { user } = useContext(UserContext);
+  const [count, setCount] = useState(0);
+  //const { user } = useContext(UserContext);
 
-  const addToCart = (productsQuantity) => {
-    setQuantity(productsQuantity);
-  }; // lo agregado
+  /*const addToCart = (productsQuantity) => {
+    setCount(productsQuantity);
+  };*/
+  // lo agregado
+  //// a Sacar
 
   useEffect(() => {
-    console.log(quantity);
+    console.log(count);
     return () => {
-      console.log(`desmonta ${quantity}`);
+      console.log(`desmonta ${count}`);
     };
-  }, [quantity]);
+  }, [count]);
 
   if (!item) {
     return <Loading />;
-  }
+  } // se debería cambiar item x item data para que lo tome.
 
   return (
     <section>
@@ -48,24 +50,24 @@ const ItemDetail = ({ item, productsAdded, addProdFunction }) => {
           </p>
 
           <footer className="footer__detail">
-            {quantity === 0 && user ? (
-              <Counter
-                stock={item.stock}
-                onConfirm={addToCart}
-                item={item}
-                productsAdded={productsAdded}
-                addProdFunction={addProdFunction}
-                setCount={quantity}
-              />
-            ) : user ? (
-              <Link to="/cart">
-                <button className="Button">Ir al carrito</button>
-              </Link>
-            ) : (
-              <Link to="/login">
-                <button className="Button">Login</button>
-              </Link>
-            )}
+            {/* {count === 0 && user ? ( */}
+            <Counter
+              stock={item.stock}
+              //onConfirm={addToCart}
+              item={item}
+              productsAdded={productsAdded}
+              addProdFunction={addProdFunction}
+              setCount={setCount}
+            />
+            {/* ) : user ? ( */}
+            <Link to="/cart">
+              <button className="Button">Ir al carrito</button>
+            </Link>
+            {/* ) : ( */}
+            <Link to="/login">
+              <button className="Button">Login</button>
+            </Link>
+            {/* )} */}
 
             <p className="price_detail">${item.price}</p>
           </footer>

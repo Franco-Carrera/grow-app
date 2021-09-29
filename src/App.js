@@ -3,7 +3,7 @@ import "./App.css";
 //
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { getList } from "./getList";
-import { getCategories } from "./data";
+
 //
 import Login from "./components/Login/Login";
 //
@@ -13,6 +13,8 @@ import Cart from "./views/Cart/Cart";
 import NavBar from "./components/navbar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+//
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 //
 import Notification from "./components/Notification/Notification";
 import { NotificationContextProvider } from "./context/NotificationContext";
@@ -47,11 +49,7 @@ const App = () => {
   return (
     <NotificationContextProvider value={user}>
       <Router>
-        <NavBar
-          categories={getCategories()}
-          itemList={itemList}
-          cartProducts={cartProducts}
-        />
+        <NavBar itemList={itemList} cartProducts={cartProducts} />
         <Notification />
         <Switch>
           <Route exact path="/">
@@ -63,17 +61,20 @@ const App = () => {
           <Route path="/contact">
             <SignUp />
           </Route>
-          <Route path="/cart">
-            <Cart
-              productsAdded={cartProducts}
-              addProdFunction={setCardProduct}
-            />
-          </Route>
+
           <Route path="/item/:id">
             <ItemDetailContainer
               productsAdded={cartProducts}
               addProdFunction={setCardProduct}
             />
+
+            <PrivateRoute path="/cart" user={user}>
+              <Cart
+                productsAdded={cartProducts}
+                addProdFunction={setCardProduct}
+              />
+            </PrivateRoute>
+
             <Route path="/login">
               <Login />
             </Route>

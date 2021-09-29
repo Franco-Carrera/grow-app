@@ -26,7 +26,7 @@ const ItemDetailContainer = (productsAdded, addProdFunction) => {
   return (
     <div className="itemDetailContainer">
       <ItemDetail
-        key={item?.id}
+        //key={item?.id}
         item={item}
         productsAdded={productsAdded}
         addProdFunction={addProdFunction}

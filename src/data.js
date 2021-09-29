@@ -17,14 +17,6 @@ export const getCategories = () => [
   { id: "fertilizantes", description: "Fertilizantes líquidos" },
 ];
 
-/*export const getProductById = (id) => {    
-    return new Promise((resolve, reject) => {
-        const product = products.find(prod => Number(prod.id) === Number(id))
-        setTimeout(() => resolve(product), 1000)
-    })
-}
-*/
-
 export const data = [
   {
     id: 0,
