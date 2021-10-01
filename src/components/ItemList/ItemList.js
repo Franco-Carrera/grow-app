@@ -7,19 +7,13 @@ const ItemList = ({ products }) => {
     return <Loading />;
   }
 
-  // if (products.length === 0) {
-  //   return <h3>No hay productos</h3>;
-  // }
-
   return (
     <article className="container__cards">
-      {products.map((item) => (
-        <Item key={item.id} itemData={item} />
+      {products.map((product) => (
+        <Item key={product.id} itemData={product} />
       ))}
     </article>
   );
 };
-
-// ver si se deja aquí la key
 
 export default ItemList;

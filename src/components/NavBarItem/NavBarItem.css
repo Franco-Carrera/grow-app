@@ -2,7 +2,9 @@
   border: none;
   background-color: transparent;
   color: white;
-  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+  visibility: visible;
+  font-size: 1.045rem;
 }
 
 .activeItems {

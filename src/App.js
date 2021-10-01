@@ -1,44 +1,22 @@
-import { useState, useEffect } from "react";
 import "./App.css";
 //
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { getList } from "./getList";
 //
-import SignUp from "./views/SignUp/SignUp";
-import Cart from "./views/Cart/Cart";
+import { getCategories } from "./data";
+import SignUp from "./components/SignUp/SignUp";
+import Cart from "./components/Cart/Cart";
 //
 import NavBar from "./components/navbar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 //
-import Notification from "./components/Notification/Notification";
-import { NotificationContextProvider } from "./context/NotificationContext";
-//import { UserContext } from './context/UserContext'
+import { CartContextProvider } from "./context/CartContext";
 
 const App = () => {
-  const [itemList, setItemList] = useState([]);
-
-  // Lógica que veremos si dejar aquí u in loading
-
-  /////
-  useEffect(() => {
-    const list = getList();
-
-    list
-      .then(
-        (list) => {
-          setItemList(list);
-        },
-        (err) => console.log(err)
-      )
-      .catch((reason) => console.log(reason));
-  }, []);
-
   return (
-    <NotificationContextProvider>
+    <CartContextProvider>
       <Router>
-        <NavBar itemList={itemList} />
-        <Notification />
+        <NavBar categories={getCategories} />
         <Switch>
           <Route exact path="/">
             <ItemListContainer />
@@ -57,7 +35,7 @@ const App = () => {
           </Route>
         </Switch>
       </Router>
-    </NotificationContextProvider>
+    </CartContextProvider>
   );
 };
 

@@ -2,6 +2,24 @@ import photo from "./assets/images/conos_Blunt.webp";
 import photo2 from "./assets/images/celulosa_coffe.jpg";
 import photo3 from "./assets/images/fertilizante_veg.jpg";
 
+export const getCategories = () => [
+  {
+    id: "Fertilizantes one",
+    description: "Fertilizantes líquidos",
+    title: "Fertilizantes",
+  },
+  {
+    id: "Celulosas one",
+    description: "Celulosas de sabores",
+    title: "Celulosas",
+  },
+  // {
+  //   id: "Conos Blun Rey one",
+  //   description: "Conos Blunt armados",
+  //   title: "Conos Blunt",
+  // },
+];
+
 export const data = [
   {
     id: 0,

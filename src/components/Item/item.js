@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Counter from "../Count/counter";
 import "./item.css";
 
 //Capittal Letter
@@ -18,7 +17,6 @@ const Item = ({ itemData }) => {
           <p className="description">{capitalLetter(itemData.description)}</p>
           <p className="price">${itemData.price}</p>
         </div>
-        <Counter stock={itemData.stock} />
       </div>
     </div>
   );

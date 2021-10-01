@@ -1,5 +1,3 @@
-//import { useState } from "react";
-import { useEffect, useState } from "react";
 import Counter from "../Count/counter";
 import Loading from "../Loading/Loading";
 import "./ItemDetail.css";
@@ -9,19 +7,6 @@ const capitalLetter = (str) =>
   str.charAt(0).toUpperCase() + str.toLowerCase().slice(1);
 
 const ItemDetail = ({ item }) => {
-  const [quantity, setQuantity] = useState(0);
-
-  const addToCart = (productsQuantity) => {
-    setQuantity(productsQuantity);
-  };
-
-  useEffect(() => {
-    console.log(quantity);
-    return () => {
-      console.log(`desmonta ${quantity}`);
-    };
-  }, [quantity]);
-
   if (!item) {
     return <Loading />;
   }
@@ -44,17 +29,13 @@ const ItemDetail = ({ item }) => {
             {capitalLetter(item.longDescription)}
           </p>
           <footer className="footer__detail">
-            <Counter onConfirm={addToCart} item={item} stock={item.stock} />
+            <Counter item={item} />
             <p className="price_detail">${item.price}</p>
           </footer>
         </div>
       </main>
-      {/* //  {coun != 0 button terminar ? } */}
     </section>
   );
 };
 
-///// Importar vista de un sólo producto
-
-// Y aquí iria el renderizado
 export default ItemDetail;
