@@ -1,7 +1,7 @@
-//import { useState } from "react";
-import { useEffect, useState } from "react";
+//import { useState } from "react"; volaría x uno
+
 import Counter from "../Count/counter";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import Loading from "../Loading/Loading";
 import "./ItemDetail.css";
 //import UserContext from "../../context/UserContext";
@@ -11,25 +11,13 @@ const capitalLetter = (str) =>
   str.charAt(0).toUpperCase() + str.toLowerCase().slice(1);
 
 const ItemDetail = ({ item, productsAdded, addProdFunction }) => {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0); volaria x2
   //const { user } = useContext(UserContext);
-
-  /*const addToCart = (productsQuantity) => {
-    setCount(productsQuantity);
-  };*/
-  // lo agregado
-  //// a Sacar
-
-  useEffect(() => {
-    console.log(count);
-    return () => {
-      console.log(`desmonta ${count}`);
-    };
-  }, [count]);
 
   if (!item) {
     return <Loading />;
-  } // se debería cambiar item x item data para que lo tome.
+  }
+  // se debería cambiar item x itemData para que lo tome.
 
   return (
     <section>
@@ -57,28 +45,30 @@ const ItemDetail = ({ item, productsAdded, addProdFunction }) => {
               item={item}
               productsAdded={productsAdded}
               addProdFunction={addProdFunction}
-              setCount={setCount}
+              // setCount={setCount}
             />
+            {/**Con el CartContext volarían todas las props post item **/}
             {/* ) : user ? ( */}
-            <Link to="/cart">
-              <button className="Button">Ir al carrito</button>
-            </Link>
-            {/* ) : ( */}
-            <Link to="/login">
-              <button className="Button">Login</button>
-            </Link>
-            {/* )} */}
 
+            {/* <Link to="/cart">
+              <button className="Button">Ir al carrito</button>
+            </Link> * */}
+
+            {/* ) : ( */}
+
+            {/* <Link to="/login">
+              <button className="Button">Login</button>
+            </Link> */}
+
+            {/* )} */}
             <p className="price_detail">${item.price}</p>
           </footer>
         </div>
       </main>
-      {/* //  {coun != 0 button terminar ? } */}
     </section>
   );
 };
 
-///// Importar vista de un sólo producto
+// De aca me lleva al counter
 
-// Y aquí iria el renderizado
 export default ItemDetail;

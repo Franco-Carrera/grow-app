@@ -1,77 +1,90 @@
 ///
 //mport { useState, useEffect } from "react";
+import { useContext } from "react";
 import "./NavBar.css";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import NavBarItem from "../NavBarItem/NavBarItem";
 import logo from "../../../src/assets/logo.svg";
+import CartContext from "../../context/CartContext";
 import CartWidget from "../CartWidget/CartWidget";
+import NotificationContext from "../../context/NotificationContext";
 //import UserContext from "../../context/UserContext";
 
 // nuevo on add, reemplaza x cart
 
-const NavBar = ({ itemlist, cartProducts }) => {
-  //const [productQuantity, setProductQuantity] = useState(0);
+const NavBar = ({ categories }) => {
   //const { user, logout } = useContext(UserContext);
+  const { getQuantity } = useContext(CartContext);
+  const { setNotification } = useContext(NotificationContext);
 
-  const arrayObjets = [
-    { id: "Fertilizantes", description: "productos Fertilizantes" },
-  ];
-
-  // realizar descripciones en archivo parte, Like profe y ver este mapeo lógica
+  const handleLogout = () => {
+    setNotification("error", `Hasta luego `);
+  };
 
   return (
     <header className="header">
       <section className="container">
         <nav className="NavBar ">
           {/* ----------Nav------------*/}
-          <ul className="navbar__menu">
-            <div className="LeftNav">
-              <div className="NavOptionsLeft">
-                <img src={logo} className="App-logo" alt="Logo" />
 
-                {/*--------------NavLinks---------*/}
-                <NavLink
-                  activeClassName="navLinkActive"
-                  className="Option"
-                  exact
-                  to="/"
-                >
-                  <NavBarItem label="productos" />
-                </NavLink>
-
-                {arrayObjets.map((cat) => (
-                  <NavLink
-                    activeClassName="navLinkActive"
-                    key={cat.id}
-                    className="Option"
-                    to={`/category/${cat.description}`}
-                  >
-                    <NavBarItem label="favourites" />
-                  </NavLink>
-                ))}
-
-                <NavLink
-                  activeClassName="navLinkActive"
-                  className="Option"
-                  to="/contact"
-                >
-                  <NavBarItem label="contacto" />
-                </NavLink>
-              </div>
-            </div>
-          </ul>
-
-          <div className="RightNav">
-            <div className="NavOptionsRight">
-              <div className="Cart__Container">
-                <Link to="/cart">
-                  <CartWidget />
+          <div className="LeftNav">
+            <div className="NavOptionsLeft">
+              {/* {user ? (
+                <button className="btn1 btn-outline-success1" onClick={logout}>
+                  Cerrar sesion
+                </button>
+              ) : (
+                <Link to="/login">
+                  <button className="btn1 btn-outline-success1">Ingresa</button>
                 </Link>
-              </div>
+              )} */}
 
-              {/*---------*/}
+              <img src={logo} className="App-logo" alt="Logo" />
+
+              {/*--------------NavLinks---------*/}
+              <NavLink
+                activeClassName="navLinkActive"
+                className="Option"
+                exact
+                to="/"
+              >
+                <NavBarItem label="productos" />
+              </NavLink>
+
+              {categories.map((cat) => (
+                <NavLink
+                  activeClassName="navLinkActive"
+                  key={cat.id}
+                  className="Option"
+                  to={`/category/${cat.title}`}
+                >
+                  <NavBarItem label={cat.title} />
+                </NavLink>
+              ))}
+
+              <button onClick={handleLogout}>Logout</button>
+
+              <NavLink
+                activeClassName="navLinkActive"
+                className="Option"
+                to="/contact"
+              >
+                <NavBarItem label="contacto" />
+              </NavLink>
             </div>
-            <p className="contadorCarrito">0</p>
+          </div>
+
+          <div className="NavOptionsRight">
+            {/* {user && cartProducts.length > 0 && ( */}
+            {getQuantity() > 0 && (
+              <NavLink to="/cart">
+                <CartWidget />
+              </NavLink>
+            )}
+            {/* // )} */}
+
+            {/* <p className="contadorCarrito">0</p> */}
+            {/*---------*/}
           </div>
         </nav>
       </section>

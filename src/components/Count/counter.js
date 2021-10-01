@@ -1,15 +1,38 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import "./counter.css";
 import NotificationContext from "../../context/NotificationContext";
+import CartContext from "../../context/CartContext";
 
-const Counter = ({ item, stock, productsAdded, addProdFunction }) => {
+/// Ahora si renovar Count
+
+// CartWidget y Cart VAN con CartContext
+
+// NavBar solo para categoryes
+
+// Sacar login  // puede investigarse o no en firebase
+
+// Reveer última clase
+
+const Counter = ({ item, setCount, stock }) => {
   const [quantity, setQuantity] = useState(0);
   const [clickThis, setClick] = useState(0);
   const { setNotification } = useContext(NotificationContext);
+  const { addItem, isInCart, getProduct } = useContext(CartContext);
+
+  useEffect(() => {
+    if (isInCart(item.id)) {
+      const oldQuantity = getProduct(item.id)?.quantity;
+      setQuantity(oldQuantity);
+    }
+    return () => {
+      setQuantity(0);
+    };
+  }, [item, getProduct, isInCart]);
 
   const minium = 0;
+
   const addOne = () => {
     quantity < stock && setQuantity(quantity + 1);
   };
@@ -18,12 +41,10 @@ const Counter = ({ item, stock, productsAdded, addProdFunction }) => {
   };
 
   const onAddToCart = () => {
-    setQuantity(quantity);
-    setNotification("success", `${item.title} ha sido agregado al carrito`);
+    addItem(item, quantity);
+    setCount(quantity);
+    setNotification("succes", `${item.title} ha sido agregado al carrito`);
   };
-  //setQuantity(0);
-  // addProdFunction([...productsAdded, newProduct]);
-  // setNotification("success", `${item.name} ha sido agregado al carrito`);
 
   return (
     <div className="itemquantity">

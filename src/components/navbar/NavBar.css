@@ -1,25 +1,31 @@
 /* Desktop Views */
 
+.navbar__menu {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .NavBar {
   display: flex;
   background: transparent;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   height: var(--header-height);
 }
 
 .NavOptionsLeft {
-  padding-left: 1.5rem;
+  padding-left: 0.5rem;
   display: grid;
-  grid-template-columns: repeat(5, auto);
-  grid-gap: 3rem;
+  grid-template-columns: repeat(6, auto);
+  grid-gap: 1rem;
   list-style-type: none;
 }
 
 .NavOptionsRight {
-  padding-left: 1.5rem;
-  padding-right: 1rem;
-  height: 2rem;
+  padding-left: 0.5rem;
+  height: 3rem;
   display: grid;
   grid-template-columns: repeat(3, auto);
   grid-gap: 3rem;
@@ -35,7 +41,6 @@
 .RightNav {
   display: flex;
   padding: 0 0.2rem;
-  list-style-type: none;
   align-items: center;
   justify-content: center;
 }
@@ -66,6 +71,7 @@
 .navLinkActive {
   color: orange;
 }
+
 .navLinkActive::after {
   opacity: 1;
   width: 90%;
@@ -99,7 +105,7 @@
 
 .contadorCarrito {
   padding: 0.5rem;
-  margin-left: -7rem;
+  margin-left: -3rem;
 }
 
 /* .logo a {

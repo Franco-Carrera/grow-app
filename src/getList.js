@@ -6,7 +6,7 @@ export const getList = (categoryes) => {
       categoryes
         ? resolve(data.filter((prod) => prod.categoryes === categoryes))
         : resolve(data);
-    }, 2000);
+    }, 1000);
   });
 };
 

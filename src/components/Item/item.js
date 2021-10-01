@@ -20,6 +20,11 @@ const Item = ({ itemData }) => {
         </div>
         <Counter stock={itemData.stock} />
       </div>
+      {!itemData.quantity && (
+        <Link to={`/item/${itemData.id}`} className="Button_Link">
+          Comprar
+        </Link>
+      )}
     </div>
   );
 };

@@ -4,6 +4,8 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 import { getList } from "../../getList";
 import "./ItemDetailContainer.css";
 
+// Se puede cambiar por {getProductBy Id}
+
 const ItemDetailContainer = (productsAdded, addProdFunction) => {
   const { id } = useParams();
   const [item, setItem] = useState(undefined);

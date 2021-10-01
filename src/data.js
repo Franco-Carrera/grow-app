@@ -12,9 +12,21 @@ import photo3 from "./assets/images/fertilizante_veg.jpg";
 // y asi exportarlo
 
 export const getCategories = () => [
-  { id: "celulosas", description: "Celulosa" },
-  { id: "filtros", description: "Filtros Slim Palmer" },
-  { id: "fertilizantes", description: "Fertilizantes líquidos" },
+  {
+    id: "Fertilizantes one",
+    description: "Fertilizantes líquidos",
+    title: "Fertilizantes",
+  },
+  {
+    id: "Celulosas one",
+    description: "Celulosas de sabores",
+    title: "Celulosas",
+  },
+  // {
+  //   id: "Conos Blun Rey one",
+  //   description: "Conos Blunt armados",
+  //   title: "Conos Blunt",
+  // },
 ];
 
 export const data = [
@@ -77,7 +89,7 @@ export const data = [
     title: "Filtros Slim",
     description: "Filtros Slim Palmer",
     longDescription:
-      " El filtro Slim Palmer x 600 unidades debe ser utilizado con papeles y tabaco de liar, esta hecho con papel natural y acetato de celulosa.",
+      "El filtro Slim Palmer x 600 unidades debe ser utilizado con papeles y tabaco de liar, esta hecho con papel natural y acetato de celulosa.",
     price: 600,
     pictureUrl: photo,
     stock: 10,
