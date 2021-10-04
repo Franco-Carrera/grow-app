@@ -7,6 +7,8 @@ const ItemList = ({ products }) => {
     return <Loading />;
   }
 
+  // Este Loading puede ir en ItemListContainer
+
   return (
     <article className="container__cards">
       {products.map((product) => (

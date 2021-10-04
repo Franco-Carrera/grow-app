@@ -15,7 +15,7 @@ const ItemDetail = ({ item }) => {
     <section>
       {/* crear card styles */}
       <header>
-        <h2 className="title_detail">{capitalLetter(item.title)}</h2>
+        <h2 className="title_detail">{capitalLetter(item.description)}</h2>
       </header>
 
       <main className="mainDetail">

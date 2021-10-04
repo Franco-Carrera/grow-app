@@ -1,17 +1,21 @@
 import photo from "./assets/images/conos_Blunt.webp";
 import photo2 from "./assets/images/celulosa_coffe.jpg";
 import photo3 from "./assets/images/fertilizante_veg.jpg";
+import photo4 from "./assets/images/Filtros_SlimOcbt.jpg";
+/// Diferencias con Url(? lo veremos)
 
+//Make THIS
 export const getCategories = () => [
   {
     id: "Fertilizantes one",
-    description: "Fertilizantes líquidos",
     title: "Fertilizantes",
+    description: "Fertilizantes líquidos",
+    pictureUrl: photo3,
   },
   {
     id: "Celulosas one",
-    description: "Celulosas de sabores",
     title: "Celulosas",
+    description: "Celulosas de sabores",
   },
   // {
   //   id: "Conos Blun Rey one",
@@ -43,8 +47,29 @@ export const data = [
     categoryes: "Celulosas",
     stock: 3,
   },
+
   {
     id: 2,
+    title: "Fertilizantes",
+    description: "Fertilizantes líquidos",
+    longDescription:
+      "Este fertilizante líquido proporciona fertilización óptima durante el crecimiento. Proporciona una base sólida para que la planta puede florecer plenamente en una etapa posterior.",
+    price: 1600,
+    pictureUrl: photo3,
+    stock: 3,
+  },
+  {
+    id: 3,
+    title: "Filtros ocb",
+    description: "Filtros ocb regular 8mm",
+    longDescription:
+      "El filtro Slim Palmer x 600 unidades debe ser utilizado con papeles y tabaco de liar, esta hecho con papel natural y acetato de celulosa.",
+    price: 600,
+    pictureUrl: photo4,
+    stock: 4,
+  },
+  {
+    id: 4,
     title: "Conos Blunts",
     description: "Conos Blunt Rey",
     longDescription:
@@ -54,27 +79,6 @@ export const data = [
     categoryes: "Conos blunts",
     stock: 1,
   },
-  {
-    id: 3,
-    title: "Tabla 2",
-    description: "Fertilizante",
-    longDescription:
-      "Este fertilizante líquido proporciona fertilización óptima durante el crecimiento. Proporciona una base sólida para que la planta puede florecer plenamente en una etapa posterior.",
-    price: 1600,
-    pictureUrl: photo3,
-    stock: 3,
-  },
-  {
-    id: 4,
-    title: "Filtros Ocb",
-    description: "Filtros",
-    longDescription:
-      " El filtro Slim Palmer x 600 unidades debe ser utilizado con papeles y tabaco de liar, esta hecho con papel natural y acetato de celulosa.",
-    price: 600,
-    pictureUrl: photo,
-    stock: 4,
-  },
-
   {
     id: 5,
     title: "Filtros Slim",

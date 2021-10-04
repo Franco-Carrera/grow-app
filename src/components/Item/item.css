@@ -1,12 +1,29 @@
+.Button_Link {
+  color: wheat;
+  border: transparent;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.4rem;
+  border-radius: 2rem;
+}
+.Button_Link:hover {
+  transform: perspective(6, 6);
+  transition: cubic-bezier(0.39, 0.575, 0.565, 1);
+  background-color: rgb(84, 68, 78);
+}
+
 .containerPrice {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  text-align: center;
 }
 .price {
   color: rgb(80, 173, 80);
   font-weight: bold;
   font-size: 1.2rem;
+  padding-bottom: 0.1rem;
+  margin-top: 1rem;
 }
 
 .card {

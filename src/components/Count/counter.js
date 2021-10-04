@@ -22,9 +22,9 @@ const Counter = ({ item }) => {
       {clickThis ? (
         <Fragment>
           <div className="itemCount__buttons">
-            <button disabled>-</button>
             <p>{count}</p>
             <button disabled>+</button>
+            <button disabled>-</button>
           </div>
           <Link to="/cart">
             <button className="addToCart_btn">Terminar compra</button>
@@ -33,12 +33,12 @@ const Counter = ({ item }) => {
       ) : (
         <Fragment>
           <div className="itemCount__buttons">
-            <button disabled={count === 0} onClick={removeOne}>
-              -
-            </button>
             <p>{count}</p>
             <button disabled={count === item.stock} onClick={addOne}>
               +
+            </button>
+            <button disabled={count === 0} onClick={removeOne}>
+              -
             </button>
           </div>
           {count <= 0 ? (

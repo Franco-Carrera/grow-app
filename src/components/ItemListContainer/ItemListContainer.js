@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "../../components/ItemList/ItemList";
+//
 import { getList } from "../../getList";
 import "./ItemListContainer.css";
-
-// item = cada product.
+// import {db} from "../.../services/firebase/firebase"
+// import { collection, getDocs, query, where } from "firebase/firestore"
 
 const ItemListContainer = () => {
   const { category } = useParams();
@@ -32,6 +33,8 @@ const ItemListContainer = () => {
       setProducts(undefined);
     };
   }, [category]);
+
+  // If else, para filtrar o no por categorías
 
   return (
     <div className="itemListContainer">

@@ -16,7 +16,7 @@ const App = () => {
   return (
     <CartContextProvider>
       <Router>
-        <NavBar categories={getCategories} />
+        <NavBar categories={getCategories()} />
         <Switch>
           <Route exact path="/">
             <ItemListContainer />

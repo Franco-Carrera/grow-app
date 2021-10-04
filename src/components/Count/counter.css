@@ -2,3 +2,8 @@
 /* .itemCount {
   padding: 2rem 2rem 0rem 3rem;
 } */
+.itemCount {
+  width: 98%;
+  border-block: 1px solid rgb(180, 180, 180);
+  padding-block: 25px;
+}

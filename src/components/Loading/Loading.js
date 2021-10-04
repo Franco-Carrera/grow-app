@@ -3,7 +3,7 @@ import "./Loading.css";
 
 const Loading = () => {
   return (
-    <div>
+    <div className="contain_Spinner">
       <Spinner className="Spinner" />
     </div>
   );

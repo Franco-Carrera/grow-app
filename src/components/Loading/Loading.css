@@ -18,3 +18,7 @@
     transform: rotate(360deg);
   }
 }
+.contain_Spinner {
+  display: flex;
+  justify-content: center;
+}

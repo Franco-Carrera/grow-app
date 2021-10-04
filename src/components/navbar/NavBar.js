@@ -1,15 +1,11 @@
 ///
 import "./NavBar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import NavBarItem from "../NavBarItem/NavBarItem";
 import logo from "../../../src/assets/logo.svg";
 import CartWidget from "../CartWidget/CartWidget";
 
-const NavBar = ({ itemList }) => {
-  const arrayObjets = [
-    { id: "Fertilizantes", description: "productos fertilizantes" },
-  ];
-
+const NavBar = ({ categories }) => {
   return (
     <header className="header">
       <section className="container">
@@ -17,8 +13,9 @@ const NavBar = ({ itemList }) => {
           {/* ----------Nav------------*/}
           <div className="LeftNav">
             <div className="NavOptionsLeft">
-              <img src={logo} className="App-logo" alt="Logo" />
-
+              <Link to="/">
+                <img src={logo} className="App-logo" alt="Logo" />
+              </Link>
               {/*--------------NavLinks---------*/}
               <NavLink
                 activeClassName="navLinkActive"
@@ -29,14 +26,14 @@ const NavBar = ({ itemList }) => {
                 <NavBarItem label="productos" />
               </NavLink>
 
-              {arrayObjets.map((cat) => (
+              {categories.map((cat) => (
                 <NavLink
                   activeClassName="navLinkActive"
                   key={cat.id}
                   className="Option"
-                  to={`/category/${cat.description}`}
+                  to={`/category/${cat.title}`}
                 >
-                  <NavBarItem label="favourites" />
+                  <NavBarItem label={cat.title} />
                 </NavLink>
               ))}
 
@@ -59,7 +56,6 @@ const NavBar = ({ itemList }) => {
               </div>
               {/*---------*/}
             </div>
-            <p className="contadorCarrito">0</p>
           </div>
         </nav>
       </section>

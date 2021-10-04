@@ -1,0 +1,23 @@
+.navbar__item__cartIcon {
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 1.8rem;
+}
+.navbar__item__cartIcon:hover {
+  transition: all 295ms;
+  color: rgb(111, 171, 114);
+  /* color: rgb(251, 171, 114); */
+}
+.widget__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.widget__quantity {
+  color: black;
+  font-weight: bold;
+  position: absolute;
+  margin-left: 3.3rem;
+  text-decoration: none;
+}

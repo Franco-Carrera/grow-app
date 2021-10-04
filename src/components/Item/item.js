@@ -14,10 +14,13 @@ const Item = ({ itemData }) => {
       {/* ------------------------ */}
       <div className="cards__text ">
         <div className="containerPrice">
-          <p className="description">{capitalLetter(itemData.description)}</p>
+          <p className="description">{capitalLetter(itemData.title)}</p>
           <p className="price">${itemData.price}</p>
         </div>
       </div>
+      <Link to={`/item/${itemData.id}`} className="Button_Link">
+        Ver detalles
+      </Link>
     </div>
   );
 };
