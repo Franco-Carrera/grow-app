@@ -27,7 +27,9 @@ const Cart = () => {
         </section>
       ))}
       {addedProducts.length > 0 ? (
-        <button onClick={() => clear()}>Vaciar carrito</button>
+        <button className="cleanCart_btn" onClick={() => clear()}>
+          Vaciar carrito
+        </button>
       ) : (
         <span>Su carrito está vacío</span>
       )}

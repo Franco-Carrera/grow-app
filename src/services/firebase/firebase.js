@@ -1,5 +1,8 @@
 import * as firebase from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+//import { useEffect, useState } from "react";
+//import { db } from "../../services/firebase/firebase";
+//import { collection, getDocs, query, where } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBmLxldJL3TD3HPwiSenjfE0e270oT2YEE",
@@ -11,6 +14,31 @@ const firebaseConfig = {
 };
 
 const app = firebase.initializeApp(firebaseConfig);
+/*
+const firebaseFunction = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    getDocs(collection(db, "items"))
+      .then((querySnapshot) => {
+        const products = querySnapshot.docs.map((doc) => {
+          return { id: doc.id, ...doc.data() };
+        });
+        setProducts(products);
+      })
+      .catch((error) => {
+        console.log("Error searching intems", error);
+      });
+  });
+}; */
+
+// export const get products
+
+// export const get productsById
+
+// Y todo se exporta a ItemListContainer
+
+// createOrder reemplaza TimeStamp
 
 export const getFirebase = () => {
   return app;

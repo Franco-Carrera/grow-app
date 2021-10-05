@@ -22,7 +22,7 @@
   --text-color: #222;
   --white-alpha-color: rgba(255, 255, 255, 0.5);
   --black-alpha-color: rgba(0, 0, 0, 0.5);
-  --header-alpha-color: rgba(105, 101, 38, 0.575);
+  --header-alpha-color: #7e5d57;
   /* --font: "Raleway", sans-serif; */
   --max-width: 1200px;
   --header-height: 4rem;
@@ -31,7 +31,8 @@
 /***********Reset****** */
 
 html {
-  background-color: rgba(16, 53, 78, 0.5);
+  background-color: rgba(9, 65, 32, 0.603);
+  /* background-color: #ccc; */
 }
 
 h1 {

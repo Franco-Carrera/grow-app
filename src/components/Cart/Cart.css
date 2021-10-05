@@ -18,6 +18,24 @@
   box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.3);
 }
 
+.cleanCart_btn {
+  border: none;
+  border-radius: 5px;
+  background-image: linear-gradient(
+    to top,
+    rgb(69, 97, 133),
+    rgb(117, 127, 157)
+  );
+  color: rgb(255, 255, 255);
+  padding: 0.5rem 0.5rem;
+  font-weight: bold;
+  box-shadow: 2px 3px 8px 0px rgba(0, 0, 0, 0.8);
+}
+.cleanCart_btn:hover {
+  transform: scale(1.02);
+  transition: all 250ms;
+}
+
 .item__Img {
   width: 16rem;
   padding: 0.1rem;
