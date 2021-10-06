@@ -1,12 +1,18 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import Counter from "../Count/counter";
 import Loading from "../Loading/Loading";
 import "./ItemDetail.css";
+import Button from "../Button/Button";
 
 //Capittal Letter
 const capitalLetter = (str) =>
   str.charAt(0).toUpperCase() + str.toLowerCase().slice(1);
 
 const ItemDetail = ({ item }) => {
+  //
+  const [itemAdded, setItemAdded] = useState(false);
+
   if (!item) {
     return <Loading />;
   }
@@ -28,11 +34,18 @@ const ItemDetail = ({ item }) => {
           <p className="description_detail">
             {capitalLetter(item.longDescription)}
           </p>
-          <footer className="footer__detail">
-            <Counter item={item} />
-            <p className="price_detail">${item.price}</p>
-          </footer>
+          <p className="price_detail">${item.price}</p>
         </div>
+
+        <footer className="footer__detail">
+          {!itemAdded ? (
+            <Counter className="counter" item={item} itemAdded={setItemAdded} />
+          ) : (
+            <Link to="/cart">
+              <Button label="Finalizar compra" />
+            </Link>
+          )}
+        </footer>
       </main>
     </section>
   );

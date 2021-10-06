@@ -1,0 +1,17 @@
+.btn_Handler {
+  border: none;
+  border-radius: 5px;
+  background-image: linear-gradient(
+    to top,
+    rgb(79, 97, 136),
+    rgb(108, 127, 167)
+  );
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  font-weight: bold;
+  box-shadow: 2px 3px 8px 0px rgba(0, 0, 0, 0.8);
+}
+.btn_Handler:hover {
+  transform: scale(1.02);
+  transition: all 250ms;
+}

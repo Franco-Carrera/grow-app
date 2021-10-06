@@ -4,6 +4,7 @@ import photo3 from "./assets/images/fertilizante_veg.jpg";
 import photo4 from "./assets/images/Filtros_SlimOcbt.jpg";
 /// Diferencias con Url(? lo veremos)
 
+//
 //Make THIS
 export const getCategories = () => [
   {

@@ -23,7 +23,6 @@
   --white-alpha-color: rgba(255, 255, 255, 0.5);
   --black-alpha-color: rgba(0, 0, 0, 0.5);
   --header-alpha-color: #7e5d57;
-  /* --font: "Raleway", sans-serif; */
   --max-width: 1200px;
   --header-height: 4rem;
 }
@@ -31,8 +30,8 @@
 /***********Reset****** */
 
 html {
-  background-color: rgba(9, 65, 32, 0.603);
-  /* background-color: #ccc; */
+  /* background-color: rgba(9, 65, 32, 0.603); */
+  background-color: #3fab6e;
 }
 
 h1 {
@@ -69,26 +68,3 @@ img {
 }
 
 /* **********App default******** */
-.App {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  margin: 0 auto;
-  z-index: 0;
-  text-align: center;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
