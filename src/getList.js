@@ -1,9 +1,11 @@
 import { data } from "./data";
 
-export const getList = () => {
+export const getList = (categoryes) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(data);
+      categoryes
+        ? resolve(data.filter((prod) => prod.categoryes === categoryes))
+        : resolve(data);
     }, 2000);
   });
 };

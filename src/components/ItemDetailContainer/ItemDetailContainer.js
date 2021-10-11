@@ -1,33 +1,46 @@
 import { useState, useEffect } from "react";
+import "./ItemDetailContainer.css";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import { getList } from "../../getList";
-import "./ItemDetailContainer.css";
+// import { getList } from "../../getList";
+import { db } from "../../services/firebase/firebase";
+import { doc, getDoc } from "firebase/firestore";
+import Loading from "../Loading/Loading";
 
 const ItemDetailContainer = () => {
-  const { id } = useParams();
   const [item, setItem] = useState(undefined);
+  const [loading, setLoading] = useState(true);
+  const { id } = useParams();
 
   useEffect(() => {
-    const list = getList();
-    list
-      .then(
-        (result) => {
-          const itemById = result.find(
-            (product) => product.id === parseInt(id)
-          );
-          setItem(itemById);
-        },
-        (err) => console.log(err)
-      )
-      .catch((reason) => console.log(reason));
+    setLoading(true);
+    getDoc(doc(db, "items", id))
+      .then((querySnapshot) => {
+        console.log({ id: querySnapshot.id, ...querySnapshot.data() });
+        const product = { id: querySnapshot.id, ...querySnapshot.data() };
+        setItem(product);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+    return () => {
+      setLoading(true);
+      setItem(undefined);
+    };
   }, [id]);
 
   return (
     <div className="itemDetailContainer">
-      <ItemDetail key={item?.id} item={item} />
+      {loading ? <Loading /> : <ItemDetail item={item} id={id} />}
     </div>
   );
 };
+
+/* 
+
+*/
 
 export default ItemDetailContainer;

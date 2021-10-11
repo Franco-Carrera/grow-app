@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap");
-
+/* Poppins */
 /*Font*/
+
 body {
   margin: 0;
   padding: 0;
@@ -11,18 +12,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-html {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-}
-
 button {
   cursor: pointer;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
+} */

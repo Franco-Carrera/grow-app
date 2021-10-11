@@ -26,14 +26,14 @@ const NavBar = ({ categories }) => {
                 <NavBarItem label="productos" />
               </NavLink>
 
-              {categories.map((cat) => (
+              {categories.map((category) => (
                 <NavLink
                   activeClassName="navLinkActive"
-                  key={cat.id}
+                  key={category.id}
                   className="Option"
-                  to={`/category/${cat.title}`}
+                  to={`/category/${category.id}`}
                 >
-                  <NavBarItem label={cat.title} />
+                  <NavBarItem label={category.title} />
                 </NavLink>
               ))}
 

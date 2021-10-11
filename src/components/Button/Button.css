@@ -1,0 +1,18 @@
+.btn_Handler {
+  border: none;
+  border-radius: 5px;
+  background-image: linear-gradient(
+    to top,
+    rgba(85, 54, 42, 0.925),
+    rgb(145, 93, 62)
+  );
+  /* ---jugar with buttons rgba-- */
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  font-weight: bold;
+  box-shadow: 2px 3px 8px 0px rgba(0, 0, 0, 0.8);
+}
+.btn_Handler:hover {
+  transform: scale(1.02);
+  transition: all 250ms;
+}

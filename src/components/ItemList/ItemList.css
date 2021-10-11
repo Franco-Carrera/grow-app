@@ -1,26 +1,12 @@
 .container__cards {
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
   align-items: center;
   flex-wrap: wrap;
   box-shadow: 0px 1px 5px 2px rgb(82 30 27 / 40%);
   width: 90%;
   border-radius: 2rem;
   padding: 1rem 3rem;
-  margin-left: 1.2rem;
+  margin-left: 3.7rem;
 }
-.container__cards .card__img:hover {
-  /* transform: translate3d(15px); */
-  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* .itemList {
-  display: grid;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 75%;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-column-gap: 25px;
-  grid-row-gap: 25px;
-  margin-top: 50px;
-} */

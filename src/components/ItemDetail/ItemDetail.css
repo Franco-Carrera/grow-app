@@ -49,10 +49,10 @@
 }
 
 .title_detail {
-  color: rgb(64, 72, 95);
+  color: rgb(84, 68, 78);
+  /* color: rgb(64, 72, 95); */
   margin: 1rem 1rem;
   text-align: center;
-  padding-left: 14rem;
 }
 
 .mainDetail {
