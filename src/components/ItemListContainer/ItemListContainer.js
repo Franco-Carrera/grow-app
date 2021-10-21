@@ -2,12 +2,12 @@ import React from "react";
 import { useState, useEffect } from "react";
 import ItemList from "../ItemList/ItemList";
 import "./ItemListContainer.css";
-//
 import Loading from "../Loading/Loading";
-//import { getList } from "../../getList";
+import { getProducts } from "../../services/firebase/firebase";
 import { useParams } from "react-router-dom";
-import { db } from "../../services/firebase/firebase";
-import { collection, getDocs, query, where } from "firebase/firestore";
+import Home from "../Home/Home";
+import { SliderData } from "../Slider/SliderData";
+import Slider from "../Slider/Slider";
 
 const ItemListContainer = () => {
   const { categoryid } = useParams(); //id poner sino
@@ -15,49 +15,32 @@ const ItemListContainer = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (!categoryid) {
+    setLoading(true);
+    getProducts("category", "==", categoryid)
+      .then((products) => {
+        setProducts(products);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+    return () => {
       setLoading(true);
-      getDocs(collection(db, "items"))
-        .then((querySnapshot) => {
-          const products = querySnapshot.docs.map((doc) => {
-            return { id: doc.id, ...doc.data() };
-          });
-          console.log(products);
-          setProducts(products);
-        })
-        .catch((err) => {
-          console.log(err);
-        })
-        .finally(() => {
-          setLoading(false);
-        });
-    } else {
-      setLoading(true);
-      getDocs(
-        query(collection(db, "items"), where("category", "==", categoryid))
-      )
-        .then((querySnapshot) => {
-          const products = querySnapshot.docs.map((doc) => {
-            return { id: doc.id, ...doc.data() };
-          });
-          setProducts(products);
-        })
-        .catch((err) => {
-          console.log(err);
-        })
-        .finally(() => {
-          setLoading(false);
-        });
-    }
+      setProducts([]);
+    };
   }, [categoryid]);
 
-  // If else, para filtrar o no por categorías
-
   return (
-    <div className="itemListContainer">
-      <h1>Productos</h1>
-      {loading ? <Loading /> : <ItemList products={products} />}
-    </div>
+    <section>
+      <div className="itemListContainer">
+        <Home />
+        <h1>Productos</h1>
+        {loading ? <Loading /> : <ItemList products={products} />}
+      </div>
+      <Slider slides={SliderData} />
+    </section>
   );
 };
 

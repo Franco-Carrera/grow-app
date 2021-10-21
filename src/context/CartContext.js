@@ -43,6 +43,15 @@ export const CartContextProvider = ({ children }) => {
     setAddedProducts(productsInCart);
   };
 
+  // Sólo sirve para el login
+  const getQuantity = () => {
+    let count = 0;
+    addedProducts.forEach((prod) => {
+      count = count + prod.quantity;
+    });
+    return count;
+  };
+
   //
   const removeItem = (id) => {
     const productsInCart = [...addedProducts];
@@ -57,11 +66,22 @@ export const CartContextProvider = ({ children }) => {
 
   return (
     <CartContext.Provider
-      value={{ addedProducts, cartQuantity, addItem, removeItem, clear, price }}
+      value={{
+        addedProducts,
+        cartQuantity,
+        addItem,
+        removeItem,
+        clear,
+        price,
+        getQuantity,
+      }}
     >
       {children}
     </CartContext.Provider>
   );
 };
+
+//getTotal
+//getProduct. Renovar stock.
 
 export default CartContext;

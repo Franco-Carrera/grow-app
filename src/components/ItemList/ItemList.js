@@ -1,14 +1,7 @@
 import Item from "../Item/item";
-import Loading from "../Loading/Loading";
 import "./ItemList.css";
 
 const ItemList = ({ products }) => {
-  if (!products) {
-    return <Loading />;
-  }
-
-  // Este Loading puede ir en ItemListContainer
-
   return (
     <article className="container__cards">
       {products.map((product) => (

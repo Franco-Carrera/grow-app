@@ -1,11 +1,10 @@
 import "./CartWidget.css";
-//import logoCarrito from "../../../src/assets/shopping-cart.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import CartContext from "../../context/CartContext";
 import { useContext } from "react";
 
-const cartIcon = <FontAwesomeIcon icon={faShoppingCart} />;
+const cartIcon = <FontAwesomeIcon icon={faShoppingBag} />;
 
 const CartWidget = () => {
   const { cartQuantity } = useContext(CartContext);

@@ -11,7 +11,6 @@
   --gray-color: #ccc;
   --gray-dark-color: #666;
   --black-color: #000;
-  --link-color: #509ee3;
   --pale-green: #32cd32;
   --title-color: #333;
   /* ---------------------- */
@@ -25,7 +24,7 @@
   --header-alpha-color: #7e5d57;
   /* --font: "Raleway", sans-serif; */
   --max-width: 1200px;
-  --header-height: 4rem;
+  --header-height: 4.2rem;
 }
 
 /***********Reset****** */
@@ -39,11 +38,13 @@
 html {
   scroll-behavior: smooth;
   box-sizing: border-box;
-  background-color: rgba(9, 65, 32, 0.603);
+  background-color: hsla(53, 41%, 59%, 0.925);
+  /* background-color: rgba(9, 65, 32, 0.603); */
 }
 
 h1 {
   text-align: center;
+  font-family: "Poppins", sans-serif;
 }
 
 .hidden {

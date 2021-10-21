@@ -2,27 +2,19 @@ import photo from "./assets/images/conos_Blunt.webp";
 import photo2 from "./assets/images/celulosa_coffe.jpg";
 import photo3 from "./assets/images/fertilizante_veg.jpg";
 import photo4 from "./assets/images/Filtros_SlimOcbt.jpg";
-/// Diferencias con Url(? lo veremos)
 
 //Make THIS
+//Primera opción de categories
+
 export const getCategories = () => [
   {
-    id: "Fertilizantes one",
-    title: "Fertilizantes",
-    description: "Fertilizantes líquidos",
-    pictureUrl: photo3,
+    id: "coffe",
+    description: "Celulosas sabor coffe",
   },
   {
-    id: "Celulosas one",
-    title: "Celulosas",
-    description: "Celulosas de sabores",
-    pictureUrl: photo2,
+    id: "pokemona",
+    description: "Pipa pokemona",
   },
-  // {
-  //   id: "Conos Blun Rey one",
-  //   description: "Conos Blunt armados",
-  //   title: "Conos Blunt",
-  // },
 ];
 
 export const data = [

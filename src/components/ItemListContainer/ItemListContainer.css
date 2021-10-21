@@ -13,9 +13,14 @@
   } 
   */
 .itemListContainer {
-  background-color: #fad961;
-  background-image: linear-gradient(90deg, #fad961 0%, #ebca56 100%);
+  /* background-color: #998e65; */
+  /* background-image: linear-gradient(90deg, #fad961 0%, #ebca56 100%); */
+  background-color: hsla(53, 41%, 59%, 0.925);
   width: 100%;
   margin: auto;
   max-width: 100%;
 }
+
+/* ver que es lo que se agranda de width in mobile
+// es el carrusel,
+// jugar desde elementos padres */

@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
 import "./ItemDetailContainer.css";
-import { useParams } from "react-router-dom";
-import ItemDetail from "../ItemDetail/ItemDetail";
-// import { getList } from "../../getList";
-import { db } from "../../services/firebase/firebase";
-import { doc, getDoc } from "firebase/firestore";
 import Loading from "../Loading/Loading";
+import ItemDetail from "../ItemDetail/ItemDetail";
+import { useParams } from "react-router-dom";
+import { getProductById } from "../../services/firebase/firebase";
 
 const ItemDetailContainer = () => {
   const [item, setItem] = useState(undefined);
@@ -14,14 +12,12 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     setLoading(true);
-    getDoc(doc(db, "items", id))
-      .then((querySnapshot) => {
-        console.log({ id: querySnapshot.id, ...querySnapshot.data() });
-        const product = { id: querySnapshot.id, ...querySnapshot.data() };
+    getProductById(id)
+      .then((product) => {
         setItem(product);
       })
-      .catch((err) => {
-        console.log(err);
+      .catch((error) => {
+        console.log(error);
       })
       .finally(() => {
         setLoading(false);
@@ -34,13 +30,9 @@ const ItemDetailContainer = () => {
 
   return (
     <div className="itemDetailContainer">
-      {loading ? <Loading /> : <ItemDetail item={item} id={id} />}
+      {loading ? <Loading /> : <ItemDetail item={item} />}
     </div>
   );
 };
-
-/* 
-
-*/
 
 export default ItemDetailContainer;

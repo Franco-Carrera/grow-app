@@ -1,20 +1,19 @@
-/* Components de counter date */
-/* .itemCount {
-  padding: 2rem 2rem 0rem 3rem;
-} */
 .itemCount {
-  width: 95%;
-  border-block: 1px solid rgb(180, 180, 180);
-  padding-block: 25px;
+  font-size: 1.1rem;
+  max-width: 130%;
+  border-block: 2px solid rgb(180, 180, 180);
+  padding-block: 23px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 150px;
-  width: 250px;
-  height: 100px;
-  /* padding: 2rem 2rem 2rem 2rem; */
+  height: 125px;
 }
+
+.itemCount__buttons {
+  padding: 0.255rem;
+}
+
 .button__count {
   border: none;
   color: #fff;

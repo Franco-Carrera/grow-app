@@ -10,3 +10,16 @@
   padding: 1rem 3rem;
   margin-left: 3.7rem;
 }
+@media only screen and (max-width: 895px) {
+  .container__cards {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0px 1px 5px 2px rgb(82 30 27 / 40%);
+    width: 80%;
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+  }
+}

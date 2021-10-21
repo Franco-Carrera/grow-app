@@ -1,11 +1,7 @@
 import "./NavBarItem.css";
 
 const NavBarItem = ({ label }) => {
-  return (
-    <li>
-      <button className="navbar__item">{label}</button>
-    </li>
-  );
+  return <button className="navbar__item">{label}</button>;
 };
 
 export default NavBarItem;

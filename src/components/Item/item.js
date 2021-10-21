@@ -38,7 +38,6 @@ const Item = ({ itemData }) => {
   );
 };
 
-////onConfirm=itemData.onConfirm
 //posible ItemDos
 
 export default Item;

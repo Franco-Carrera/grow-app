@@ -17,9 +17,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 40%;
+  width: 90%;
   border-left: 1px solid rgb(180, 180, 180);
-  /* padding-inline: 25px; */
+  /* padding-inline: 25px; + cambio en width */
 }
 .description_detail {
   font-size: 1.2rem;
@@ -32,7 +32,6 @@
   flex-direction: column;
   justify-content: left;
   align-items: center;
-  padding: 2rem 2rem 2rem 2rem;
 }
 
 .itemDetail {
@@ -67,5 +66,6 @@
   color: rgb(84, 68, 78);
   font-weight: bold;
   font-size: 1.5rem;
-  align-self: flex-end;
+  align-self: center;
+  margin: 0 auto;
 }

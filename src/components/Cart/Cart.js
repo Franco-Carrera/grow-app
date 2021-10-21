@@ -1,10 +1,40 @@
 import "./Cart.css";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+//import ItemList from "../ItemList/ItemList";
+import UserContext from "../../context/UserContext";
 import CartContext from "../../context/CartContext";
+import NotificationContext from "../../context/NotificationContext";
 import Button from "../Button/Button";
+import { createOrder } from "../../services/firebase/firebase";
 
 const Cart = () => {
+  const [processingOrder, setProcessingOrder] = useState(false);
   const { addedProducts, removeItem, clear, price } = useContext(CartContext);
+  const { user } = useContext(UserContext);
+  const { setNotification } = useContext(NotificationContext);
+
+  const confirmOrder = () => {
+    setProcessingOrder(true);
+
+    const objOrder = {
+      buyer: user,
+      items: addedProducts,
+      total: price,
+    };
+
+    createOrder(objOrder)
+      .then((msg) => {
+        setNotification("success", msg);
+        console.log(setNotification);
+      })
+      .catch((error) => {
+        setNotification("error", error);
+      })
+      .finally(() => {
+        setProcessingOrder(false);
+        clear();
+      });
+  };
 
   return (
     <article className="cart">
@@ -27,17 +57,26 @@ const Cart = () => {
           </button>
         </section>
       ))}
-      {addedProducts.length > 0 ? (
+      {!processingOrder && addedProducts.length > 0 ? (
         <>
           <Button
             label="Vaciar carrito"
             // className="cleanCart_btn"
             clickHandler={() => clear()}
           ></Button>
-          <p className="totalPrice">Total: {price}</p>
         </>
       ) : (
         <p>Su carrito esta vacío</p>
+      )}
+      {!processingOrder && addedProducts.length > 0 && (
+        <div>
+          <Button
+            label="Confirmar compra"
+            onClick={() => confirmOrder()}
+            // className="Button o traer otro button"
+          />
+          <h3 className="totalPrice">Total: {price}</h3>
+        </div>
       )}
     </article>
   );
