@@ -117,7 +117,7 @@ Aquí utilicé las mismas funciones que en el itemListContainer, para traer o no
 
 # <-----------------User--------------->
 
-Aquí decidí envolver mi App ahora con un estado de user, pasado por props al Cart en App.js, asignando en la orden de compra, a este user, que se registra por medio del componente _Login_, dándole la bienvenida con una notificación si se registra y despedida de la misma manera si se desloguea. Al comprar también se le envía una notificación, si realizó la compra con éxito
+Aquí decidí envolver mi App ahora con un estado de user, pasado por props al Cart en App.js, asignando en la orden de compra, a este user, que se registra por medio del componente _Login_, dándole la bienvenida con una notificación si se registra y despedida de la misma manera si se desloguea. Al comprar también se le envía una notificación, si realizó la compra con éxito.
 
 # <-------------------------------->
 
