@@ -1,4 +1,3 @@
-//import PhotoCelu from "../../assets/images/celulosa_aledinha.jpg";
 import PedidosImg from "../../assets/slideGrow.png";
 import StockImg from "../../assets/stockGrow.png";
 import CultiveImg from "../../assets/cultiveGeow.png";

@@ -4,7 +4,7 @@ import CartContext from "../../context/CartContext";
 import Button from "../Button/Button";
 
 const Counter = ({ item, itemAdded }) => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
   const { addItem } = useContext(CartContext);
 
   // const minium = 0;
@@ -13,7 +13,7 @@ const Counter = ({ item, itemAdded }) => {
     count < item.stock && setCount(count + 1);
   };
   const removeOne = () => {
-    count > 0 && setCount(count - 1);
+    count > 1 && setCount(count - 1);
   };
 
   const onClickHandler = (item, count) => {
@@ -35,7 +35,7 @@ const Counter = ({ item, itemAdded }) => {
           </button>
           <button
             className="button__count"
-            disabled={count === 0}
+            disabled={count === 1}
             onClick={removeOne}
           >
             -

@@ -10,7 +10,10 @@ const Notification = () => {
   }
 
   return (
-    <div style={{ color: notification.severity === "error" ? "red" : "green" }}>
+    <div
+      className="notification_msg"
+      style={{ color: notification.severity === "error" ? "red" : "green" }}
+    >
       {notification.message}
     </div>
   );

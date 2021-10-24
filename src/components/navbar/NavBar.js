@@ -76,14 +76,6 @@ const NavBar = () => {
                   <NavBarItem label="Login">Login</NavBarItem>
                 </NavLink>
               )}
-
-              {/* <NavLink
-                activeClassName="navLinkActive"
-                className="Option"
-                to="/contact"
-              >
-                <NavBarItem label="contacto" />
-              </NavLink> */}
             </div>
           </div>
 

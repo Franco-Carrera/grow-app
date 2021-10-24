@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import Home from "../Home/Home";
 import { SliderData } from "../Slider/SliderData";
 import Slider from "../Slider/Slider";
+import Footer from "../Footer/Footer";
 
 const ItemListContainer = () => {
   const { categoryid } = useParams(); //id poner sino
@@ -40,6 +41,7 @@ const ItemListContainer = () => {
         {loading ? <Loading /> : <ItemList products={products} />}
       </div>
       <Slider slides={SliderData} />
+      <Footer />
     </section>
   );
 };

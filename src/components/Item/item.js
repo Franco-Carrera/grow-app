@@ -25,7 +25,6 @@ const Item = ({ itemData }) => {
           <div className="cards__text ">
             <div className="containerPrice">
               <p className="description">{capitalLetter(itemData.title)}</p>
-              {/* or description */}
               <p className="price">${itemData.price}</p>
             </div>
           </div>

@@ -1,10 +1,10 @@
 .btn_Handler {
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   background-image: linear-gradient(
     to top,
-    rgba(85, 54, 42, 0.925),
-    rgb(145, 93, 62)
+    rgba(211, 111, 72, 0.925),
+    rgb(141, 81, 46)
   );
   /* ---jugar with buttons rgba-- */
   color: rgb(255, 255, 255);

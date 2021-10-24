@@ -11,7 +11,6 @@ const capitalLetter = (str) =>
   str.charAt(0).toUpperCase() + str.toLowerCase().slice(1);
 
 const ItemDetail = ({ item }) => {
-  //
   const [itemAdded, setItemAdded] = useState(false);
   const { user } = useContext(UserContext);
 
@@ -25,7 +24,6 @@ const ItemDetail = ({ item }) => {
 
   return (
     <section>
-      {/* crear card styles */}
       <header>
         <h2 className="title_detail">{capitalLetter(item.title)}</h2>
       </header>
@@ -43,9 +41,11 @@ const ItemDetail = ({ item }) => {
         </div>
 
         <footer className="footer__detail">
-          <p className="price_detail">${item.price}</p>
           {!itemAdded ? (
-            <Counter className="counter" item={item} itemAdded={setItemAdded} />
+            <div>
+              <p className="price_detail">${item.price}</p>
+              <Counter item={item} itemAdded={setItemAdded} />
+            </div>
           ) : user ? (
             <Link to="/cart">
               <Button label="Finalizar compra" />
@@ -53,7 +53,7 @@ const ItemDetail = ({ item }) => {
           ) : (
             <Link to="/login">
               <button
-                onClick={() => activeLogin}
+                onClick={() => activeLogin()}
                 className="Option__detail"
                 label="Login"
               >
@@ -61,7 +61,6 @@ const ItemDetail = ({ item }) => {
               </button>
             </Link>
           )}
-          {/* en button cambiarlo para ponerlo mas arriba + color*/}
         </footer>
       </main>
     </section>

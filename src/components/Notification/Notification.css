@@ -9,3 +9,7 @@
 .errorFontSize {
   font-size: 50px;
 }
+.notification_msg {
+  background-color: linear-gradient(90deg, #aa9b65 0%, #998a52 100%);
+  padding: 2rem;
+}

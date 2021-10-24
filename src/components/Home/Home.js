@@ -1,13 +1,11 @@
 import React from "react";
 import imageHome from "../../assets/images/wallet.svg";
-import imageHome2 from "../../assets/images/Filtros_SlimOcbt.jpg";
+import imageHome2 from "../../assets/images/client.svg";
 import imageHome3 from "../../assets/images/carrito-home.jpeg";
 import imageHome4 from "../../assets/eastwood.png";
 import "./Home.css";
 
 const Home = () => {
-  // Button con link que me lleve a products
-
   return (
     <section className="container-home">
       <div className="row">
@@ -40,7 +38,6 @@ const Home = () => {
     </section>
   );
 };
-
-// Meter el home básico y component footer visto // hover en ver lo destacado
+// hover en ver lo destacado // Button con link que me lleve a products
 
 export default Home;

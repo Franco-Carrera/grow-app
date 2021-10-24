@@ -3,7 +3,6 @@ import "./Login.css";
 import UserContext from "../../context/UserContext";
 import NotificationContext from "../../context/NotificationContext";
 import { useHistory } from "react-router-dom";
-//Button Login
 
 const Login = () => {
   const [username, setUsername] = useState("");

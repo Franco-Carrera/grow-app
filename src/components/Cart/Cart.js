@@ -1,5 +1,5 @@
 import "./Cart.css";
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 //import ItemList from "../ItemList/ItemList";
 import UserContext from "../../context/UserContext";
 import CartContext from "../../context/CartContext";
@@ -8,10 +8,15 @@ import Button from "../Button/Button";
 import { createOrder } from "../../services/firebase/firebase";
 
 const Cart = () => {
+  const [total, setTotal] = useState();
   const [processingOrder, setProcessingOrder] = useState(false);
   const { addedProducts, removeItem, clear, price } = useContext(CartContext);
   const { user } = useContext(UserContext);
   const { setNotification } = useContext(NotificationContext);
+
+  useEffect(() => {
+    setTotal(price);
+  }, [price]);
 
   const confirmOrder = () => {
     setProcessingOrder(true);
@@ -19,13 +24,12 @@ const Cart = () => {
     const objOrder = {
       buyer: user,
       items: addedProducts,
-      total: price,
+      total: total,
     };
 
     createOrder(objOrder)
       .then((msg) => {
         setNotification("success", msg);
-        console.log(setNotification);
       })
       .catch((error) => {
         setNotification("error", error);
@@ -57,26 +61,18 @@ const Cart = () => {
           </button>
         </section>
       ))}
+      {total > 0 && !processingOrder && <h3>Total: ${total}</h3>}
       {!processingOrder && addedProducts.length > 0 ? (
         <>
-          <Button
-            label="Vaciar carrito"
-            // className="cleanCart_btn"
-            clickHandler={() => clear()}
-          ></Button>
+          <Button label="Vaciar carrito" clickHandler={() => clear()}></Button>
         </>
       ) : (
-        <p>Su carrito esta vacío</p>
+        <p className="clean__paragraph">Su carrito esta vacío</p>
       )}
       {!processingOrder && addedProducts.length > 0 && (
-        <div>
-          <Button
-            label="Confirmar compra"
-            onClick={() => confirmOrder()}
-            // className="Button o traer otro button"
-          />
-          <h3 className="totalPrice">Total: {price}</h3>
-        </div>
+        <button onClick={() => confirmOrder()} className="buy__btn">
+          Confirmar Compra
+        </button>
       )}
     </article>
   );
