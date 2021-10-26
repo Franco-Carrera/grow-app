@@ -3,6 +3,7 @@ import { useContext } from "react";
 //
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //
+import Home from "./components/Home/Home";
 import Cart from "./components/Cart/Cart";
 import Login from "./components/Login/Login";
 import Notification from "./components/Notification/Notification";
@@ -14,7 +15,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import { NotificationContextProvider } from "./context/NotificationContext";
 import { CartContextProvider } from "./context/CartContext";
 import UserContext from "./context/UserContext";
-
+//
 const App = () => {
   const { user } = useContext(UserContext);
 
@@ -25,6 +26,9 @@ const App = () => {
           <NavBar />
           <Notification />
           <Switch>
+            <Route exact path="/home">
+              <Home />
+            </Route>
             <Route exact path="/">
               <ItemListContainer />
             </Route>

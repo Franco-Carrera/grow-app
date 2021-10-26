@@ -5,10 +5,6 @@ import "./ItemListContainer.css";
 import Loading from "../Loading/Loading";
 import { getProducts } from "../../services/firebase/firebase";
 import { useParams } from "react-router-dom";
-import Home from "../Home/Home";
-import { SliderData } from "../Slider/SliderData";
-import Slider from "../Slider/Slider";
-import Footer from "../Footer/Footer";
 
 const ItemListContainer = () => {
   const { categoryid } = useParams(); //id poner sino
@@ -36,12 +32,9 @@ const ItemListContainer = () => {
   return (
     <section>
       <div className="itemListContainer">
-        <Home />
         <h1>Productos</h1>
         {loading ? <Loading /> : <ItemList products={products} />}
       </div>
-      <Slider slides={SliderData} />
-      <Footer />
     </section>
   );
 };

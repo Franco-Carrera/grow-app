@@ -6,6 +6,29 @@
   padding-top: 0.255rem;
 }
 
+@media screen and (min-width: 1024px) {
+  .menu-btn {
+    display: none;
+  }
+
+  .menu {
+    position: static;
+    width: auto;
+    flex-direction: row;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .menu a {
+    padding: 0 1rem;
+  }
+  .menu a:last-child {
+    padding-right: 0;
+  }
+  .menu a:hover {
+    background-color: transparent;
+  }
+}
+
 .NavBar {
   display: flex;
   background: transparent;
@@ -105,16 +128,15 @@
   margin-left: -2.2rem;
 }
 
-/* .logo a {
-  color: var(--first-color);
-  font-weight: bold;
-  font-size: 2rem;
-  text-decoration: none;
-} */
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@media only screen and (min-width: 150px) and (max-width: 680px) {
+  .NavBar {
+    margin: 0;
   }
 }
 

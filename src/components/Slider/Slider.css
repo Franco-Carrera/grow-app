@@ -6,24 +6,32 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 6rem;
+  /* margin-right: 1rem; */
 }
+
 .img__Slider {
-  width: 960px;
+  width: 970px;
   height: 450px;
   border-radius: 10px;
-  /* display: none; */
 }
-@media only screen and (min-width: 490px) and (max-width: 690px) {
+
+@media only screen and (min-width: 290px) and (max-width: 549px) {
+  .slider {
+    display: none;
+  }
+}
+@media only screen and (min-width: 550px) and (max-width: 1200px) {
   .img__Slider {
     width: 403px;
     height: 400px;
     border-radius: 10px;
   }
 }
+
 .right__arrow {
   position: absolute;
   top: 50%;
-  right: 32px;
+  right: 72px;
   font-size: 3rem;
   color: var(--white-alpha-color);
   z-index: 10;
@@ -33,7 +41,7 @@
 .left__arrow {
   position: absolute;
   top: 50%;
-  left: 32px;
+  left: 72px;
   font-size: 3rem;
   color: var(--white-alpha-color);
   z-index: 10;

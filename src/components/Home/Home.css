@@ -2,27 +2,31 @@
 
 .Button__home {
   border: none;
-  border-radius: 5px;
+  border-radius: 12px;
   background-image: linear-gradient(
     to top,
-    rgba(85, 54, 42, 0.925),
-    rgb(145, 93, 62)
+    rgb(69, 97, 133),
+    rgb(117, 127, 157)
   );
-  /* ---jugar with buttons rgba-- */
   color: rgb(255, 255, 255);
-  padding: 10px;
+  padding: 0.8rem 1rem;
   font-weight: bold;
   box-shadow: 2px 3px 8px 0px rgba(0, 0, 0, 0.8);
-  text-align: center;
+  margin-left: 10rem;
+}
+.Button__home:hover {
+  transform: scale(1.02);
+  transition: all 250ms;
 }
 
+/* Home */
 .container-home {
   max-width: 1200px;
   margin: auto;
   padding-left: 25px;
   padding-right: 25px;
   padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-bottom: 4rem;
 }
 
 .row {
@@ -46,11 +50,7 @@
   line-height: 50px;
   margin: 15px 0;
 }
-/* .p__home {
-  text-align: center;
-  font-style: italic;
-  font-size: medium;
-} */
+
 .content-all {
   width: 160px;
   margin: auto;
@@ -58,9 +58,25 @@
   position: relative;
   margin-top: 30px;
 }
-@media only screen and (max-width: 1120px) {
+
+/* -----------------------------Mq-------------------------------- */
+@media only screen and (min-width: 1023px) and (max-width: 1200px) {
+  .row {
+    justify-content: center;
+  }
+  .col-2 h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (min-width: 50px) and (max-width: 1100px) {
   .content-all {
     display: none;
+  }
+}
+@media only screen and (max-width: 720px) {
+  .Button__home {
+    margin-left: 6.8rem;
   }
 }
 
