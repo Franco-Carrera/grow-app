@@ -37,6 +37,19 @@
   box-shadow: 0 0 6px var(--color_shadow);
 }
 
+@media screen and (min-width: 250px) and (max-width: 410px) {
+  h1 {
+    margin-left: 2rem;
+  }
+  .card {
+    padding: 0.4rem;
+    width: 215px;
+  }
+  .Button_Link {
+    font-size: 1rem;
+  }
+}
+
 .card:hover {
   transform: scale(1.02);
   box-shadow: 5px 10px 20px 1px rgba(255, 235, 235, 0.273);

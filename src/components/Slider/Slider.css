@@ -20,7 +20,7 @@
     display: none;
   }
 }
-@media only screen and (min-width: 550px) and (max-width: 1200px) {
+@media only screen and (min-width: 550px) and (max-width: 1100px) {
   .img__Slider {
     width: 403px;
     height: 400px;

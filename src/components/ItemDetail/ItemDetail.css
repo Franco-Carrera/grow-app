@@ -64,3 +64,22 @@
   margin: 0 auto;
   text-align: center;
 }
+
+@media screen and (min-width: 250px) and (max-width: 660px) {
+  .card__img_detail {
+    width: 45%;
+  }
+
+  .description_detail {
+    font-size: 1rem;
+  }
+  .details_details {
+    justify-content: end;
+    margin-top: 17rem;
+    position: absolute;
+    padding: 1.5rem;
+  }
+  .price_detail {
+    font-size: 1.3rem;
+  }
+}

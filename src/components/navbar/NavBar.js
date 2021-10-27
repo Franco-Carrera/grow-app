@@ -7,7 +7,11 @@ import CartWidget from "../CartWidget/CartWidget";
 import UserContext from "../../context/UserContext";
 import CartContext from "../../context/CartContext";
 import NotificationContext from "../../context/NotificationContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { getCategories } from "../../services/firebase/firebase";
+
+const menuIcon = <FontAwesomeIcon icon={faBars} />;
 
 const NavBar = () => {
   const [categories, setCategories] = useState();
@@ -19,7 +23,6 @@ const NavBar = () => {
     getCategories()
       .then((categories) => {
         setCategories(categories);
-        console.log(categories);
       })
       .catch((err) => {
         console.log(err);
@@ -45,25 +48,6 @@ const NavBar = () => {
                 <img src={logo} className="App-logo" alt="Logo" />
               </Link>
               {/*--------------NavLinks---------*/}
-              {/* <button class="menu-btn">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z" />
-                </svg>
-                <svg
-                  class="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M16.192 6.344L11.949 10.586 7.707 6.344 6.293 7.758 10.535 12 6.293 16.242 7.707 17.656 11.949 13.414 16.192 17.656 17.606 16.242 13.364 12 17.606 7.758z" />
-                </svg>
-              </button> */}
 
               <NavLink
                 activeClassName="navLinkActive"
@@ -110,13 +94,16 @@ const NavBar = () => {
 
           <div className="RightNav">
             <div className="NavOptionsRight">
-              <div>
+              <div className="contain__cart">
                 {user && getQuantity() > 0 && (
                   <Link to="/cart">
                     <CartWidget />
                   </Link>
                 )}
               </div>
+
+              <i className="icon_button">{menuIcon}</i>
+
               {/*---------*/}
             </div>
           </div>

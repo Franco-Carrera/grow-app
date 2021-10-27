@@ -3,11 +3,13 @@
   background-color: transparent;
   color: white;
   font-family: "Nunito", sans-serif;
-  visibility: visible;
   font-size: 1.045rem;
   font-style: oblique;
 }
+/* se puede cambiar color x custom propertyes */
 
-.activeItems {
-  color: orange;
+@media screen and (min-width: 769) and (max-width: 1024px) {
+  .navbar__item {
+    font-size: 0.9rem;
+  }
 }

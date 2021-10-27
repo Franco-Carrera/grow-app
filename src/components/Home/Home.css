@@ -65,7 +65,7 @@
     justify-content: center;
   }
   .col-2 h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 }
 
@@ -74,9 +74,18 @@
     display: none;
   }
 }
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 1055px) {
   .Button__home {
     margin-left: 6.8rem;
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 559px) {
+  .col-2 {
+    margin-bottom: 8rem;
+  }
+  .col-2 h1 {
+    font-size: 2.9rem;
   }
 }
 
