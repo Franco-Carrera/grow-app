@@ -17,6 +17,28 @@
   border-radius: 10px;
   box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.3);
 }
+.clean__btn {
+  border: none;
+  border-radius: 6px;
+  background-image: linear-gradient(
+    to top,
+    rgba(211, 111, 72, 0.925),
+    rgb(141, 81, 46)
+  );
+  /* ---jugar with buttons rgba-- */
+  color: rgb(255, 255, 255);
+  margin-bottom: 1rem;
+  padding: 10px;
+  font-weight: bold;
+  box-shadow: 2px 3px 8px 0px rgba(0, 0, 0, 0.8);
+}
+.clean__btn:hover {
+  transform: scale(1.02);
+  transition: all 250ms;
+}
+.contain__Userdates {
+  text-align: center;
+}
 
 .buy__btn {
   border: none;
@@ -34,6 +56,16 @@
 .buy__btn:hover {
   transform: scale(1.02);
   transition: all 250ms;
+}
+.container__orderId {
+  background-color: #bf408080;
+  padding: 2rem;
+  border-radius: 4rem;
+}
+.p__orderId {
+  color: var(--title-color);
+  font-weight: 600;
+  text-align: center;
 }
 
 .clean__paragraph {
@@ -75,6 +107,7 @@
   margin: 0 auto;
   padding: 1rem;
   text-align: start;
+  font-weight: bolder;
 }
 @media screen and (min-width: 250px) and (max-width: 660px) {
   .cart__item {

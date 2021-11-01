@@ -1,6 +1,5 @@
 import "./App.css";
 import { useContext } from "react";
-//
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //
 import Home from "./components/Home/Home";
@@ -15,7 +14,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import { NotificationContextProvider } from "./context/NotificationContext";
 import { CartContextProvider } from "./context/CartContext";
 import UserContext from "./context/UserContext";
-//
+
 const App = () => {
   const { user } = useContext(UserContext);
 
@@ -26,24 +25,12 @@ const App = () => {
           <NavBar />
           <Notification />
           <Switch>
-            <Route exact path="/home">
-              <Home />
-            </Route>
-            <Route exact path="/">
-              <ItemListContainer />
-            </Route>
-            <Route path="/category/:categoryid">
-              <ItemListContainer />
-            </Route>
-            <Route path="/item/:id">
-              <ItemDetailContainer />
-            </Route>
-            <Route path="/cart" user={user}>
-              <Cart />
-            </Route>
-            <Route path="/login">
-              <Login />
-            </Route>
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/" component={ItemListContainer} />
+            <Route path="/category/:categoryid" component={ItemListContainer} />
+            <Route path="/item/:id" component={ItemDetailContainer} />
+            <Route path="/cart" user={user} component={Cart} />
+            <Route path="/login" component={Login} />
           </Switch>
         </Router>
       </CartContextProvider>

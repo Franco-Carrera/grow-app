@@ -55,7 +55,7 @@ const NavBar = () => {
                 exact
                 to="/home"
               >
-                <NavBarItem label="Home" />
+                <NavBarItem label="home" />
               </NavLink>
 
               <NavLink
@@ -86,7 +86,7 @@ const NavBar = () => {
                 </div>
               ) : (
                 <NavLink className="Option" to="/login">
-                  <NavBarItem label="Login">Login</NavBarItem>
+                  <NavBarItem label="login">Login</NavBarItem>
                 </NavLink>
               )}
             </div>

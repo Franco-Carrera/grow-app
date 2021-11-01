@@ -3,7 +3,6 @@ import React, { useState } from "react";
 const Context = React.createContext();
 
 export const UserContextProvider = ({ children }) => {
-  console.log(children);
   const [user, setUser] = useState();
 
   const login = (objUser) => {

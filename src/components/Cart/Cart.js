@@ -1,83 +1,133 @@
 import "./Cart.css";
-import React, { useContext, useState, useEffect } from "react";
-//import ItemList from "../ItemList/ItemList";
-import UserContext from "../../context/UserContext";
+import React, { useContext, useState } from "react";
 import CartContext from "../../context/CartContext";
-import NotificationContext from "../../context/NotificationContext";
 import Button from "../Button/Button";
-import { createOrder } from "../../services/firebase/firebase";
+import {
+  collection,
+  addDoc,
+  doc,
+  writeBatch,
+  Timestamp,
+  getDoc,
+} from "@firebase/firestore";
+import { db } from "../../services/firebase/firebase";
+import UserForm from "../UserForm/UserForm";
 
 const Cart = () => {
-  const [total, setTotal] = useState();
+  const { addedProducts, removeItem, clear, total } = useContext(CartContext);
   const [processingOrder, setProcessingOrder] = useState(false);
-  const { addedProducts, removeItem, clear, price } = useContext(CartContext);
-  const { user } = useContext(UserContext);
-  const { setNotification } = useContext(NotificationContext);
+  const [showForm, setShowForm] = useState(false);
+  const [generatedOrder, setGeneratedOrder] = useState();
+  const [orderId, setOrderId] = useState();
 
-  useEffect(() => {
-    setTotal(price);
-  }, [price]);
+  // const { setNotification } = useContext(NotificationContext);
 
-  const confirmOrder = () => {
+  const confirmOrder = (buyer) => {
     setProcessingOrder(true);
 
-    const objOrder = {
-      buyer: user,
+    const order = {
+      /**o user */
+      buyer: buyer,
       items: addedProducts,
+      date: Timestamp.fromDate(new Date()),
       total: total,
     };
 
-    createOrder(objOrder)
-      .then((msg) => {
-        setNotification("success", msg);
-      })
-      .catch((error) => {
-        setNotification("error", error);
-      })
-      .finally(() => {
-        setProcessingOrder(false);
-        clear();
+    const batch = writeBatch(db);
+    const outOfStock = [];
+
+    order.items.forEach((prod, index) => {
+      getDoc(doc(db, "items", prod.id)).then((docSnap) => {
+        if (docSnap.data().stock >= order.items[index].quantity) {
+          batch.update(doc(db, "items", docSnap.id), {
+            stock: docSnap.data().stock - order.items[index].quantity,
+          });
+        } else {
+          outOfStock.push({ id: docSnap.id, ...docSnap.data() });
+        }
       });
+    });
+
+    if (outOfStock.length === 0) {
+      addDoc(collection(db, "orders"), order)
+        .then((ref) => {
+          batch.commit();
+          setOrderId(ref._key.path.segments[1]);
+          setGeneratedOrder(true);
+        })
+        .catch((error) => console.log(error))
+        .finally(() => {
+          setProcessingOrder(false);
+          clear();
+        });
+    }
   };
 
   return (
     <article className="cart">
-      {addedProducts.map((prod) => (
-        <section key={prod.id} className="cart__item">
-          <img
-            className="item__Img"
-            src={prod.pictureUrl}
-            alt={`foto ${prod.title}`}
-          />
-          <div className="itemInfo">
-            <h2 className="itemTitle">{prod.title}</h2>
-            <p className="itemDescription">{prod.description}</p>
-            <p className="itemQuantity">{prod.quantity}</p>
-            <p className="price">{`$${prod.price}`}</p>
-          </div>
+      <h1>Carrito</h1>
 
-          <button onClick={() => removeItem(prod.id)} className="remove_Btn">
-            x
-          </button>
-        </section>
-      ))}
-      {total > 0 && !processingOrder && <h3>Total: ${total}</h3>}
-      {!processingOrder && addedProducts.length > 0 ? (
-        <>
-          <Button label="Vaciar carrito" clickHandler={() => clear()}></Button>
-        </>
+      {!processingOrder ? (
+        addedProducts.length === 0 ? (
+          generatedOrder ? (
+            <div className="container__orderId">
+              <p className="p__orderId">{`Orden generada, el id de su compra es el #${orderId}`}</p>
+            </div>
+          ) : (
+            <p>su carrito está vacío</p>
+          )
+        ) : (
+          <>
+            {addedProducts.map((prod) => (
+              <section key={prod.id} className="cart__item">
+                <img
+                  className="item__Img"
+                  src={prod.pictureUrl}
+                  alt={`foto ${prod.title}`}
+                />
+                <div className="itemInfo">
+                  <h2 className="itemTitle">{prod.title}</h2>
+                  <p className="itemDescription">{prod.description}</p>
+                  <p className="itemQuantity">{prod.quantity}</p>
+                  <p className="price">{`$${prod.price}`}</p>
+                </div>
+
+                <button
+                  onClick={() => removeItem(prod.id)}
+                  className="remove_Btn"
+                >
+                  x
+                </button>
+              </section>
+            ))}
+            {/* ------------------- */}
+            {addedProducts.length > 0 ? (
+              <>
+                <Button label="Vaciar carrito" clickHandler={() => clear()} />
+                <Button
+                  label="Confirmar compra"
+                  clickHandler={() => setShowForm(true)}
+                />
+                <p className="totalPrice">TOTAL: ${total}</p>
+                {showForm && (
+                  <UserForm
+                    showForm={setShowForm}
+                    confirmOrder={confirmOrder}
+                  />
+                )}
+              </>
+            ) : (
+              generatedOrder && (
+                <p className="p__orderId">{`Orden generada, el id de su compra es el #${orderId}`}</p>
+              )
+            )}
+          </>
+        )
       ) : (
-        <p className="clean__paragraph">Su carrito esta vacío</p>
-      )}
-      {!processingOrder && addedProducts.length > 0 && (
-        <button onClick={() => confirmOrder()} className="buy__btn">
-          Confirmar Compra
-        </button>
+        <p>Procesando orden</p>
       )}
     </article>
   );
 };
-
-//
 
 export default Cart;

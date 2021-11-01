@@ -5,9 +5,6 @@ import {
   getDocs,
   getDoc,
   doc,
-  addDoc,
-  Timestamp,
-  writeBatch,
   query,
   where,
 } from "firebase/firestore";
@@ -71,43 +68,5 @@ export const getProductById = (itemid) => {
       .catch((error) => {
         reject("Error obteniendo producto: " + error);
       });
-  });
-};
-
-export const createOrder = (objOrder) => {
-  return new Promise((resolve, reject) => {
-    objOrder = {
-      ...objOrder,
-      date: Timestamp.fromDate(new Date()),
-    };
-    const batch = writeBatch(db);
-    const outOfStock = [];
-
-    objOrder.items.forEach((prod, i) => {
-      getDoc(doc(db, "items", prod.id)).then((DocumentSnapshot) => {
-        if (DocumentSnapshot.data().stock >= objOrder.items[i].quantity) {
-          batch.update(doc(db, "items", DocumentSnapshot.id), {
-            stock: DocumentSnapshot.data().stock - objOrder.items[i].quantity,
-          });
-        } else {
-          outOfStock.push({
-            ...DocumentSnapshot.data(),
-            id: DocumentSnapshot.id,
-          });
-        }
-      });
-    });
-
-    if (outOfStock.length === 0) {
-      addDoc(collection(db, "orders"), objOrder)
-        .then(() => {
-          batch.commit().then(() => {
-            resolve("La orden se ejecutó con éxito");
-          });
-        })
-        .catch((error) => {
-          reject("Error al ejecutar la orden: " + error);
-        });
-    }
   });
 };

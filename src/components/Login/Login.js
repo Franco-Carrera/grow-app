@@ -18,15 +18,18 @@ const Login = () => {
       username,
       password,
     };
-
-    login(objUser);
-    setNotification("success", `Bienvenido ${objUser.username}`);
-    history.push("/");
+    if (username && password !== "") {
+      login(objUser);
+      setNotification("success", `Bienvenido ${objUser.username}`);
+      history.push("/");
+    } else {
+      console.log("cadena vacía");
+    }
   };
 
   return (
     <div className="LoginContainer">
-      <h3>Log In</h3>
+      <h2>Log In</h2>
       <form onSubmit={handleLogin} className="LoginForm">
         <label className="LabelLogin">
           Usuario
@@ -34,6 +37,7 @@ const Login = () => {
             className="InputLogin"
             type="text"
             value={username}
+            required
             onChange={({ target }) => setUsername(target.value)}
           />
         </label>
@@ -43,6 +47,7 @@ const Login = () => {
             className="InputLogin"
             type="password"
             value={password}
+            required
             onChange={({ target }) => setPassword(target.value)}
           />
         </label>

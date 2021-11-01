@@ -15,7 +15,7 @@ const ItemDetail = ({ item }) => {
   const { user } = useContext(UserContext);
 
   const activeLogin = () => {
-    console.log("activo");
+    console.log("activeLogin");
   };
 
   if (!item) {
