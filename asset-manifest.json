@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/grow-app/static/css/main.5b093327.chunk.css",
-    "main.js": "/grow-app/static/js/main.c66c5b69.chunk.js",
-    "main.js.map": "/grow-app/static/js/main.c66c5b69.chunk.js.map",
+    "main.css": "/grow-app/static/css/main.772e2601.chunk.css",
+    "main.js": "/grow-app/static/js/main.44c30ca8.chunk.js",
+    "main.js.map": "/grow-app/static/js/main.44c30ca8.chunk.js.map",
     "runtime-main.js": "/grow-app/static/js/runtime-main.5bc2f232.js",
     "runtime-main.js.map": "/grow-app/static/js/runtime-main.5bc2f232.js.map",
     "static/css/2.cc77c331.chunk.css": "/grow-app/static/css/2.cc77c331.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.aab06de6.chunk.js.map": "/grow-app/static/js/3.aab06de6.chunk.js.map",
     "index.html": "/grow-app/index.html",
     "static/css/2.cc77c331.chunk.css.map": "/grow-app/static/css/2.cc77c331.chunk.css.map",
-    "static/css/main.5b093327.chunk.css.map": "/grow-app/static/css/main.5b093327.chunk.css.map",
+    "static/css/main.772e2601.chunk.css.map": "/grow-app/static/css/main.772e2601.chunk.css.map",
     "static/js/2.99f0abc8.chunk.js.LICENSE.txt": "/grow-app/static/js/2.99f0abc8.chunk.js.LICENSE.txt",
     "static/media/carrito-home.98d6ca8f.jpeg": "/grow-app/static/media/carrito-home.98d6ca8f.jpeg",
     "static/media/client.e8aff30a.svg": "/grow-app/static/media/client.e8aff30a.svg",
@@ -27,7 +27,7 @@
     "static/js/runtime-main.5bc2f232.js",
     "static/css/2.cc77c331.chunk.css",
     "static/js/2.99f0abc8.chunk.js",
-    "static/css/main.5b093327.chunk.css",
-    "static/js/main.c66c5b69.chunk.js"
+    "static/css/main.772e2601.chunk.css",
+    "static/js/main.44c30ca8.chunk.js"
   ]
 }
