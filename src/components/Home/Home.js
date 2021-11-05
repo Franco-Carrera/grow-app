@@ -52,6 +52,5 @@ const Home = () => {
     </Fragment>
   );
 };
-// hover en ver lo destacado // Button con link que me lleve a products
 
 export default Home;

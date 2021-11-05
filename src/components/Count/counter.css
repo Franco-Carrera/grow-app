@@ -58,7 +58,8 @@
 }
 @media screen and (min-width: 250px) and (max-width: 660px) {
   .itemCount {
-    font-size: 1rem;
-    padding-top: 1.2rem;
+    font-size: 1.4rem;
+    padding-top: 0.2rem;
+    margin-bottom: 4rem;
   }
 }

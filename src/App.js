@@ -1,13 +1,12 @@
 import "./App.css";
 import { useContext } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-//
 import Home from "./components/Home/Home";
 import Cart from "./components/Cart/Cart";
 import Login from "./components/Login/Login";
 import Notification from "./components/Notification/Notification";
 //
-import NavBar from "./components/navbar/NavBar";
+import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 //

@@ -1,6 +1,6 @@
 .card__img_detail {
   padding: 0.3rem;
-  width: 35%;
+  width: 33%;
   height: auto;
   border-radius: 0.8rem;
   object-fit: contain;
@@ -67,19 +67,23 @@
 
 @media screen and (min-width: 250px) and (max-width: 660px) {
   .card__img_detail {
-    width: 45%;
+    width: 75%;
   }
 
   .description_detail {
     font-size: 1rem;
   }
   .details_details {
-    justify-content: end;
-    margin-top: 17rem;
-    position: absolute;
+    margin-top: -0.2rem;
     padding: 1.5rem;
   }
+  .footer__detail {
+    margin-bottom: 3rem;
+  }
   .price_detail {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+  }
+  .mainDetail {
+    flex-wrap: wrap;
   }
 }

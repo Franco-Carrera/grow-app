@@ -97,11 +97,6 @@
   pointer-events: none;
 }
 
-/* .menu__icon {
-  padding-right: 1rem;
-  padding-top: 0.3rem;
-} */
-
 .icon_button {
   outline: thin;
   width: 100%;
@@ -109,6 +104,7 @@
   height: 4vh;
   /* background-color: var(--gray-light-color); */
   display: none;
+  pointer-events: none;
 }
 
 @media screen and (max-width: 768px) {
@@ -129,6 +125,9 @@
   }
   .Option {
     display: none;
+  }
+  .contain__cart {
+    padding-left: 18rem;
   }
 }
 

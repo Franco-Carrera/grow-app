@@ -18,6 +18,9 @@ const NavBar = () => {
   const { user, logout } = useContext(UserContext);
   const { getQuantity } = useContext(CartContext);
   const { setNotification } = useContext(NotificationContext);
+  const [sidebar, setSidebar] = useState(false);
+
+  const showSidebar = () => setSidebar(!sidebar);
 
   useEffect(() => {
     getCategories()
@@ -102,7 +105,9 @@ const NavBar = () => {
                 )}
               </div>
 
-              <i className="icon_button">{menuIcon}</i>
+              <i className="icon_button" onClick={showSidebar}>
+                {menuIcon}
+              </i>
 
               {/*---------*/}
             </div>

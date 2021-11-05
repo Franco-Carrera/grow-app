@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import UserContext from "../../context/UserContext";
-import Counter from "../Count/counter";
+import Counter from "../Count/Counter";
 import Loading from "../Loading/Loading";
 import "./ItemDetail.css";
 import Button from "../Button/Button";

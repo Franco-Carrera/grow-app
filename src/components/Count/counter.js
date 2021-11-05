@@ -1,13 +1,11 @@
 import { Fragment, useContext, useState } from "react";
-import "./counter.css";
+import "./Counter.css";
 import CartContext from "../../context/CartContext";
 import Button from "../Button/Button";
 
 const Counter = ({ item, itemAdded }) => {
   const [count, setCount] = useState(1);
   const { addItem } = useContext(CartContext);
-
-  // const minium = 0;
 
   const addOne = () => {
     count < item.stock && setCount(count + 1);

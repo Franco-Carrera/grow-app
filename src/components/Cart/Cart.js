@@ -20,13 +20,10 @@ const Cart = () => {
   const [generatedOrder, setGeneratedOrder] = useState();
   const [orderId, setOrderId] = useState();
 
-  // const { setNotification } = useContext(NotificationContext);
-
   const confirmOrder = (buyer) => {
     setProcessingOrder(true);
 
     const order = {
-      /**o user */
       buyer: buyer,
       items: addedProducts,
       date: Timestamp.fromDate(new Date()),
@@ -65,7 +62,7 @@ const Cart = () => {
 
   return (
     <article className="cart">
-      <h1>Carrito</h1>
+      <h1 className="title__Cart">Carrito</h1>
 
       {!processingOrder ? (
         addedProducts.length === 0 ? (
@@ -74,7 +71,7 @@ const Cart = () => {
               <p className="p__orderId">{`Orden generada, el id de su compra es el #${orderId}`}</p>
             </div>
           ) : (
-            <p>su carrito está vacío</p>
+            <p className="clean__paragraph">su carrito está vacío</p>
           )
         ) : (
           <>

@@ -22,12 +22,10 @@ export const CartContextProvider = ({ children }) => {
 
   const addItem = (item, quantity) => {
     if (!isInCart(item.id)) {
-      console.log("agregando al carrito");
       const newProduct = { ...item, quantity: quantity };
       const products = [...addedProducts, newProduct];
       setAddedProducts(products);
     } else {
-      console.log("actualize carrito");
       updateProductInCart(item.id, quantity);
     }
   };
@@ -80,8 +78,5 @@ export const CartContextProvider = ({ children }) => {
     </CartContext.Provider>
   );
 };
-
-//getTotal
-//getProduct. Renovar stock.
 
 export default CartContext;
