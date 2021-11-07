@@ -5,7 +5,7 @@
   margin: auto 1rem;
 }
 .cart {
-  padding: 3rem;
+  padding: 2rem;
 }
 
 .cart__item {
@@ -118,8 +118,8 @@
     flex-direction: column;
     padding: 1.6rem;
     align-items: center;
-    width: 80%;
-    margin-left: 1rem;
+    width: 84%;
+    margin-left: 1.6rem;
   }
   .cart {
     padding: 1.2rem;

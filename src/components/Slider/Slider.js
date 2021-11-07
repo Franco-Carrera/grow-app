@@ -21,8 +21,6 @@ const Slider = ({ slides }) => {
   const prevSlide = () => {
     setCurrent(current === 0 ? length - 1 : current - 1);
   };
-  console.log(current);
-  console.log(length);
 
   if (!Array.isArray(slides) || slides.length <= 0) {
     return null;

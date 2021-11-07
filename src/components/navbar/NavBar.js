@@ -56,7 +56,7 @@ const NavBar = () => {
                 activeClassName="navLinkActive"
                 className="Option"
                 exact
-                to="/home"
+                to="/grow-app"
               >
                 <NavBarItem label="home" />
               </NavLink>

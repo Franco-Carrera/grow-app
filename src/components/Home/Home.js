@@ -10,6 +10,8 @@ import imageHome3 from "../../assets/images/carrito-home.jpeg";
 import imageHome4 from "../../assets/eastwood.png";
 import "./Home.css";
 
+//resize loading
+
 const Home = () => {
   return (
     <Fragment>

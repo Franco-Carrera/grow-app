@@ -24,7 +24,7 @@ const App = () => {
           <NavBar />
           <Notification />
           <Switch>
-            <Route exact path="/home" component={Home} />
+            <Route exact path="/grow-app" component={Home} />
             <Route exact path="/" component={ItemListContainer} />
             <Route path="/category/:categoryid" component={ItemListContainer} />
             <Route path="/item/:id" component={ItemDetailContainer} />

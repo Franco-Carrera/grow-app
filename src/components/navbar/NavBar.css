@@ -9,6 +9,20 @@
   padding-top: 0.255rem;
 }
 
+.css-9k59jz {
+  width: inherit;
+}
+
+@media screen and (min-width: 480px) {
+  .contain__bottomNav {
+    display: none;
+  }
+}
+
+.MuiBottomNavigation-root {
+  background-color: var(--header-alpha-color);
+}
+
 .NavBar {
   display: flex;
   background: transparent;
@@ -127,7 +141,7 @@
     display: none;
   }
   .contain__cart {
-    padding-left: 18rem;
+    padding-left: 13rem;
   }
 }
 
