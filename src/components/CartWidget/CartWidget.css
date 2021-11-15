@@ -21,3 +21,8 @@
   margin-left: 3.3rem;
   text-decoration: none;
 }
+@media only screen and (min-width: 150px) and (max-width: 680px) {
+  .navbar__item__cartIcon {
+    font-size: 1.9rem;
+  }
+}

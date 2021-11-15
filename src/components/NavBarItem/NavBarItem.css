@@ -1,12 +1,11 @@
 .navbar__item {
   border: none;
   background-color: transparent;
-  color: white;
+  color: var(--gray-light-color);
   font-family: "Nunito", sans-serif;
   font-size: 1.045rem;
   font-style: oblique;
 }
-/* se puede cambiar color x custom propertyes */
 
 @media screen and (min-width: 769) and (max-width: 1024px) {
   .navbar__item {

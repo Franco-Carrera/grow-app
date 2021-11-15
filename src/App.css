@@ -1,16 +1,13 @@
 /* ******* Custom Properties ********* */
 :root {
-  --first-color: #d90062;
-  --first-alpha-color: rgba(111, 75, 128, 0.884);
-  --second-color: #14192d;
-  --second-alpha-color: rgba(20, 25, 45, 0.75);
   --white-color: #fff;
   --gray-light-color: #f3f3f3;
   --gray-color: #ccc;
-  --gray-dark-color: #666;
   --black-color: #000;
   --title-color: #333;
+  --html-background: hsla(53, 41%, 59%, 0.925);
   /* ---------------------- */
+  --loading: rgb(101, 112, 124);
   --black1: #1a1b1f;
   --black2: #30353b;
   --color_shadow: #00000033;
@@ -36,7 +33,6 @@ html {
   scroll-behavior: smooth;
   box-sizing: border-box;
   background-color: hsla(53, 41%, 59%, 0.925);
-  /* background-color: rgba(9, 65, 32, 0.603); */
 }
 
 h1 {
@@ -59,10 +55,6 @@ img {
 }
 
 @media only screen and (max-width: 700px) {
-  /* .container__cards {
-    width: 60%;
-  } */
-  /* itemlistcontainer width: 60% */
   .card {
     display: flex;
     flex-direction: column;
@@ -76,5 +68,3 @@ img {
   margin-right: auto;
   max-width: var(--max-width);
 }
-
-/* **********App default******** */

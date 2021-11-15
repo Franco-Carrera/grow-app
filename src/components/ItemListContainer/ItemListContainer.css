@@ -6,9 +6,6 @@
 }
 @media screen and (min-width: 250px) and (max-width: 410px) {
   .itemListContainer {
-    margin: auto -1rem;
+    margin: 0 auto;
   }
 }
-/* ver que es lo que se agranda de width in mobile
-// es el carrusel,
-// jugar desde elementos padres */

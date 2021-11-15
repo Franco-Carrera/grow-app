@@ -8,19 +8,22 @@ import UserContext from "../../context/UserContext";
 import CartContext from "../../context/CartContext";
 import NotificationContext from "../../context/NotificationContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import {
+  faHouseUser,
+  faDumpster,
+  faUserAstronaut,
+} from "@fortawesome/free-solid-svg-icons";
 import { getCategories } from "../../services/firebase/firebase";
 
-const menuIcon = <FontAwesomeIcon icon={faBars} />;
+const homeIcon = <FontAwesomeIcon icon={faHouseUser} />;
+const loginIcon = <FontAwesomeIcon icon={faUserAstronaut} />;
+const productsIcon = <FontAwesomeIcon icon={faDumpster} />;
 
 const NavBar = () => {
   const [categories, setCategories] = useState();
   const { user, logout } = useContext(UserContext);
   const { getQuantity } = useContext(CartContext);
   const { setNotification } = useContext(NotificationContext);
-  const [sidebar, setSidebar] = useState(false);
-
-  const showSidebar = () => setSidebar(!sidebar);
 
   useEffect(() => {
     getCategories()
@@ -105,12 +108,23 @@ const NavBar = () => {
                 )}
               </div>
 
-              <i className="icon_button" onClick={showSidebar}>
-                {menuIcon}
-              </i>
-
-              {/*---------*/}
+              <section>
+                <div className="mobile__buttons">
+                  <Link className="products_button" to="/">
+                    {productsIcon}
+                  </Link>
+                  <Link className="user_button" to="/login">
+                    {loginIcon}
+                  </Link>
+                  <Link className="home_button" to="/grow-app">
+                    {homeIcon}
+                  </Link>
+                </div>
+              </section>
             </div>
+            {/* Cambiar si no se usa este icon + estado */}
+
+            {/*---------*/}
           </div>
         </nav>
       </section>
