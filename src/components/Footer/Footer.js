@@ -1,13 +1,8 @@
 import "./Footer.css";
-import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faBehance } from "@fortawesome/free-brands-svg-icons";
-
-const linkedinIcon = <FontAwesomeIcon icon={faLinkedin} />;
-const facebookIcon = <FontAwesomeIcon icon={faFacebook} />;
-const behanceIcon = <FontAwesomeIcon icon={faBehance} />;
 
 const Footer = () => {
   return (
@@ -20,19 +15,27 @@ const Footer = () => {
       </div>
       <ul className="social_icon">
         <li>
-          <Link className="link_icon" to="/linkedin">
-            {linkedinIcon}
-          </Link>
+          <a
+            className="link_icon"
+            href="https://www.linkedin.com/in/franco-carrera-desarrollador-web/"
+            target={"_blank"}
+            rel={"noreferrer"}
+          >
+            <FontAwesomeIcon icon={faLinkedin} />
+          </a>
         </li>
         <li>
-          <Link className="link_icon" to="/facebook">
-            {facebookIcon}
-          </Link>
+          <a className="link_icon" href="https://github.com/Franco-Carrera">
+            <FontAwesomeIcon icon={faGithub} />
+          </a>
         </li>
         <li>
-          <Link className="link_icon" to="/behance">
-            {behanceIcon}
-          </Link>
+          <a
+            className="link_icon"
+            href="https://www.behance.net/francocarrera1"
+          >
+            <FontAwesomeIcon icon={faBehance} />
+          </a>
         </li>
       </ul>
       <p>2021 Ecommerce Leeps | Derechos reservados</p>
