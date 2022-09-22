@@ -1,4 +1,4 @@
-ont/* Desktop Views */
+/* Desktop Views */
 
 .contain__cart {
   height: 0rem;
@@ -25,6 +25,11 @@ ont/* Desktop Views */
   grid-template-columns: repeat(6, auto);
   grid-gap: 3rem;
   list-style-type: none;
+}
+
+.NavOptionsLeft img {
+  display: flex;
+  align-items: center;
 }
 
 .NavOptionsRight {
@@ -131,7 +136,7 @@ ont/* Desktop Views */
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 14s linear;
   }
 }
 
